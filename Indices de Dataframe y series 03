@@ -1,0 +1,24 @@
+import pandas as pd
+
+states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas']
+flowers = ['Camellia', 'Forget-me-not',
+           'Saguaro cactus blossom', 'Apple blossom']
+insects = ['Monarch butterfly', 'Four-spotted skimmer dragonfly',
+           'Two-tailed swallowtail', 'European honey bee']
+index = ['state 1', 'state 2', 'state 3', 'state 4']
+
+df = pd.DataFrame({'state': states, 'flower': flowers,
+                  'insect': insects}, index=index)
+# set_index  poner nombres de los estados como valores del índice en loc[]
+df = df.set_index('state')
+
+# alabama,alaska y arizona estan dentro de una lista y se usa .loc[] para el ejercicio y flower es la lista
+flowers = df.loc[['Alabama', 'Alaska', 'Arizona'], 'flower']
+print(flowers)
+
+# resultado:
+state
+Alabama                  Camellia
+Alaska              Forget-me-not
+Arizona    Saguaro cactus blossom
+Name: flower, dtype: object

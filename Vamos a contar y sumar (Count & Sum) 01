@@ -1,0 +1,8 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+# esta linea de codigo muestra cuanto ah escuchado el usuario en la plataforma, agregando el metodo.mean()
+user_mean_dur = df[df['user_id'] == '5D9AAD37']['total play'].mean()
+# recuerda siempre usar los corchetes para tu dataframe
+print(user_mean_dur)

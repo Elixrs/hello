@@ -1,0 +1,28 @@
+import pandas as pd
+
+df_stock = pd.read_csv('/datasets/phone_stock.csv')
+df_stock['item_lowercase'] = df_stock['item'].str.lower()
+
+apple = df_stock[df_stock['item_lowercase']
+                 == 'apple iphone xr 64gb']['count'].sum()
+samsung = df_stock[df_stock['item_lowercase']
+                   == 'samsung galaxy a30 32gb']['count'].sum()
+
+df_stock = df_stock.drop_duplicates(
+    subset='item_lowercase').reset_index(drop=True)
+
+df_stock.loc[0, 'count'] = apple
+df_stock.loc[3, 'count'] = samsung
+
+print(df_stock)
+
+# resultado :
+id                     item  count           item_lowercase
+0  100480924     Apple iPhone Xr 64gb     29     apple iphone xr 64gb
+1  100480959     Xiaomi Redmi 6A 16GB     44     xiaomi redmi 6a 16gb
+2  100480975          HUAWEI P30 lite     38          huawei p30 lite
+3  100480988  Samsung Galaxy A30 32GB     60  samsung galaxy a30 32gb
+4  100481020            Honor 8X 64GB     64            honor 8x 64gb
+
+# ¡Lo hemos conseguido! Nos hemos desecho de los datos duplicados de los teléfonos y
+# hemos combinado toda la información para tener una fila por teléfono.

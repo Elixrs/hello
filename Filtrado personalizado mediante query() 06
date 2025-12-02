@@ -1,0 +1,26 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+
+cols = ['name', 'genre']
+s_genres = ['Shooter', 'Simulation', 'Sports', 'Strategy']
+
+df_filtered = (df.query('genre not in @s_genres')[['name', 'genre']])[cols]
+# Filtra los géneros usando query() y not in
+
+print(df_filtered)
+
+# resultado :                                    name         genre
+1                                     Super Mario Bros.      Platform
+2                                        Mario Kart Wii        Racing
+4                              Pokemon Red/Pokemon Blue  Role-Playing
+5                                                Tetris        Puzzle
+6                                 New Super Mario Bros.      Platform
+...                                                 ...           ...
+16710                Woody Woodpecker in Crazy Castle 5      Platform
+16711  SCORE International Baja 1000: The Official Game        Racing
+16712                     Samurai Warriors: Sanada Maru        Action
+16714                           Haitaka no Psychedelica     Adventure
+16715                                  Spirits & Spells      Platform
+
+[11489 rows x 2 columns]

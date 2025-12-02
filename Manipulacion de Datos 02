@@ -1,0 +1,30 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+
+
+def score_group(score):
+    if score < 60:
+        return 'low'
+    elif score < 80:
+        return 'medium'
+    elif score >= 80:
+        return 'high'
+    else:
+        return 'no score'
+
+
+df['score_categorized'] = df['critic_score'].apply(score_group)
+
+df_grouped = df.groupby('score_categorized')
+df_sum = df_grouped['na_sales'].sum()
+
+print(df_sum)
+
+# ejercicio ,  Agrupar por la nueva columna 'score_categorized' utilizando el método groupby().
+# Calcular la suma de la columna 'na_sales' del DataFrame agrupado utilizando sum().
+# Mostrar el resultado.
+
+# resuelto ! Si dejamos de lado la categoría 'no score' ,
+# parece que las ventas en NA se relacionan con las puntuaciones de la crítica. Genial, ¿no?

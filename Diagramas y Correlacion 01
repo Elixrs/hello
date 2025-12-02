@@ -1,0 +1,18 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/height_weight.csv')
+
+corr_mat = df.corr()
+male_corr = corr_mat.loc['male', ['height', 'weight', 'age']]
+print(male_corr)
+
+# resultado :
+# height    0.760690
+# weight    0.785218
+# age       0.004750
+# Name: male, dtype: float64
+
+
+# guia: ¡Es correcto! ¡Tres coeficientes por el precio de uno!
+# Has hecho un gran trabajo aprendiendo sobre diagramas de dispersión y correlación.
+#  En la próxima lección vamos a centrar nuestra atención en un nuevo tipo de gráfico.

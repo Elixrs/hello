@@ -1,0 +1,55 @@
+import numpy as np
+
+exam_results = np.array(
+    [
+        42,  56,  59,  76,  43,  34,  62,  51,  50,  65,
+        66,  50,  46,  5,  79, 99,  51,  26,  35,   8,
+        34,  47,  64,  58,  61,  12,  30,  63,  20,  68
+    ]
+)
+
+summarized_data = {'excellent': 0,  # añade el valor inicial aquí,
+                   'good': 0,  # añade el valor inicial aquí,
+                   'average': 0,  # añade el valor inicial aquí,
+                   'passable': 0,  # añade el valor inicial aquí,
+                   'failed': 0,
+                   }  # añade el valor inicial aquí}
+
+for score in exam_results:  # bucle for para verificar los resultados y dar notas a los estudiantes
+    if score >= 90:
+        summarized_data['excellent'] += 1
+    elif score >= 70:
+        summarized_data['good'] += 1
+    elif score >= 50:
+        summarized_data['average'] += 1
+    elif score >= 20:
+        summarized_data['passable'] += 1
+    elif score < 20:
+        summarized_data['failed'] += 1
+
+
+# escribe aquí el código para contar el número de estudiantes para cada tipo de resultados obtenidos.
+
+# código para mostrar los resultados en pantalla. No lo cambies.
+for result in summarized_data:
+    print(result, '-', summarized_data[result])
+
+# resultado :
+# excellent - 1
+# good - 2
+# average - 14
+# passable - 10
+# failed - 3
+
+
+# guia : En primer lugar, debes rellenar el diccionario `summarized_data` con los valores iniciales.
+#  Establece los valores iniciales a cero porque al principio de la ejecución del código,
+# no encontramos ni un solo resultado, ya sea excelente, satisfactorio o suspendido.
+# A continuación te mostramos un ejemplo:
+#  ```python summarized_data = {'excellent': 0, 'good': 0, 'average': # añade el valor inicial aquí,
+# 'passable': # añade el valor inicial aquí, 'failed': # añade el valor inicial aquí} ```
+# Para contar el número de estudiantes en cada categoría, sigue estos pasos: - Revisa cada nota una por una. -
+# Compara cada puntuación con los valores umbral correspondientes a excelente, notable, satisfactorio, aprobado y suspendido. -
+# En función del resultado de la comparación, incrementa el valor del diccionario correspondiente en 1.
+# A continuación te mostramos un ejemplo:
+# ```python for score in exam_results: if score >= 90: summarized_data['excellent'] += 1 elif score >= 70: # continúa el código ``

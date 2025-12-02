@@ -1,0 +1,7 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/Driver_Details.csv')
+
+# el metodo .sample() SIEMPRE necesita que le digas cuántas filas quieres.
+df.sample(5)
+df.info()

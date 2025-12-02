@@ -1,0 +1,39 @@
+from scipy import stats as st
+import numpy as np
+
+# tiempo pasado en el sitio web por usuarios con un nombre de usuario y contraseña
+time_on_site_logpass = [368, 113, 328, 447, 1, 156, 335, 233,
+                        308, 181, 271, 239, 411, 293, 303,
+                        206, 196, 203, 311, 205, 297, 529,
+                        373, 217, 416, 206, 1, 128, 16, 214]
+
+# tiempo pasado en el sitio web por los usuarios que inician sesión a través de las redes sociales
+time_on_site_social = [451, 182, 469, 546, 396, 630, 206,
+                       130, 45, 569, 434, 321, 374, 149,
+                       721, 350, 347, 446, 406, 365, 203,
+                       405, 631, 545, 584, 248, 171, 309,
+                       338, 505]
+
+
+# tu código va debajo
+
+alpha = 0.05  # tu código: establece un nivel crítico de significación estadística
+
+# tu código: prueba la hipótesis de que las medias de las dos poblaciones independientes son iguales
+results = st.ttest_ind(time_on_site_logpass, time_on_site_social)
+
+print('valor p:', results.pvalue)  # tu código: imprime el valor p obtenido)
+
+# tu código: compara los valores p obtenidos con el nivel de significación estadística):
+if results.pvalue < alpha:
+    print("Rechazamos la hipótesis nula")
+else:
+    print("No podemos rechazar la hipótesis nula")
+
+# resultado :
+# valor p: 0.0010501061456827461
+# Rechazamos la hipótesis nula
+
+# guia : Utiliza la función ttest_ind del paquete scipy.stats para probar la hipótesis.
+#  El valor p es el segundo valor en la matriz devuelta por la función ttest_ind.
+# También puedes acceder a él con el atributo de la siguiente forma: results.pvalue.

@@ -1,0 +1,7 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+data_types = df.dtypes  # con df.dtypes puedes acceder a los datos de cada columna
+
+print(data_types)

@@ -1,0 +1,37 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+df['user_score'] = pd.to_numeric(df['user_score'], errors='coerce')
+
+genres = ['Puzzle', 'Strategy']
+df['genre'] = df['genre'].where(~df['genre'].isin(genres), 'Misc')
+
+print(df['genre'].value_counts(ascending=True))
+
+# resultado :
+Fighting         849
+Simulation       874
+Platform         888
+Racing          1249
+Adventure       1303
+Shooter         1323
+Role-Playing    1500
+Sports          2348
+Misc            3013
+Action          3370
+Name: genre, dtype: int64
+
+
+# Ejercicio: Crea una variable llamada genres que contenga una lista de las dos categorías menos representadas del último ejercicio:
+# 'Puzzle' y 'Strategy'. A continuación, utiliza where() para modificar la columna
+# 'genre' de df para que los valores de la lista genres se sustituyan por 'Misc'.
+#  El precódigo contiene tu código del último ejercicio que permite imprimir los valores únicos y comprobar el resultado.
+
+
+# Guia:Asigna una lista con dos elementos (`'Puzzle'` y `'Strategy'`) a la variable `genres`.
+# Luego llama a `where()` en la columna `'genre'` de `df`.
+# La condición lógica debe utilizar el método `isin()` para comprobar que los valores *no* están en la lista `genres`,
+#  y el valor de reemplazo debe ser `'Misc'`. No olvides asignar el resultado a `df['genre']`.
+# También recuerda que el operador `~` se usa para **negar la condición**. Es decir,
+#  convierte: - `True` → `False` - `False` → `True` Esto es necesario porque **queremos reemplazar** los géneros `'Puzzle'` y `'Strategy'`,
+# no conservarlos. Entonces necesitamos que la condición sea **`False` para esos casos**, y eso lo logramos con `~.`

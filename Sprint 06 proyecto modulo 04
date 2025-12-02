@@ -1,0 +1,55 @@
+order = [
+    {
+        'item': 'Margherita pizza',
+        'category': 'pizza',
+        'quantity': 2,
+        'comment': 'Add extra cheese please!',
+        'price': 9  # precio por elemento
+    },
+    {
+        'item': 'Ham pizza',
+        'category': 'pizza',
+        'quantity': 1,
+        'comment': '',
+        'price': 12
+    },
+    {
+        'item': 'Pepsi 1 l',
+        'category': 'beverages',
+        'quantity': 3,
+        'comment': '',
+        'price': 2
+    },
+    {
+        'item': 'Apple juice 0.5 l',
+        'category': 'beverages',
+        'quantity': 1,
+        'comment': '',
+        'price': 1
+    },
+    {
+        'item': 'Croissant with cheese',
+        'category': 'baked foods',
+        'quantity': 2,
+        'comment': '',
+        'price': 1
+    }
+]
+
+total_pizza_price = 0
+
+for item in order:
+    if item['category'] == 'pizza':
+        total_pizza_price += item['price'] * item['quantity']
+
+print(total_pizza_price)
+
+# resultado : 30
+
+# guia : Ya sabes cómo calcular el precio total del pedido.
+#  Siguiendo la misma lógica, añade una nueva condición: el precio se debe añadir al total solo si la `'category'` es `'pizza'`.
+
+
+# Bucles y condiciones, listas y diccionarios...
+# Has conseguido poner en práctica unos cuantos capítulos de este curso en solo tres líneas de código.
+#  Realmente desbloqueas el potencial de un lenguaje de programación cuando eres capaz de combinar diferentes herramientas.

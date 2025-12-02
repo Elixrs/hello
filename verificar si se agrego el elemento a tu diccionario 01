@@ -1,0 +1,20 @@
+financial_info = {
+    'American Express': 93.23,
+    'Boeing': 178.44,
+    'Coca-Cola': 45.15,
+    'Nike': 97.99,
+    'JPMorgan': 96.27,
+    'Walmart': 130.68
+}
+
+financial_info['Walt Disney'] = 119.34
+print(financial_info)
+
+
+# comprobamos si Walt Disney existe
+if financial_info.get('Walt Disney') == None:
+    financial_info['Walt Disney'] = 119.34  # si no, la agregamos
+else:  # si existe
+    financial_info['Walt Disney'] += 3.2  # actualizamos el valor
+
+# resultado

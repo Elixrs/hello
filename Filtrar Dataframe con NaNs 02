@@ -1,0 +1,24 @@
+import pandas as pd
+
+df_logs = pd.read_csv('/datasets/visit_log.csv')
+
+# Filtra el DataFrame y guarda el resultado en una nueva variable llamada df_emails.
+df_emails = df_logs[~df_logs['email'].isna()]
+
+print(df_emails.head(10))
+
+# Ahora solo tienes filas donde hay una dirección de correo electrónico asociada con la visita.
+# ¡Combinar ~ con isna() es una excelente manera de filtrar las filas con valores ausentes!
+
+# Resultado :
+user_id source       email  purchase
+1   5644686960  email  c129aa540a         0
+11  8623045648  email  d6d19c571c         0
+18  5739438900  email  19379ee49c         0
+19  7486955288  email  09c27794fa         0
+22  1397217221    NaN  79ac569f0b         0
+33  7298923004  email  1fe184ed73         0
+43  6034222291  email  fb58a27f03         0
+49  5062457902    NaN  9ddce3a861         0
+56  5690036640  email  a088a48182         0
+66  9963049355  email  9cc43ebd15         0

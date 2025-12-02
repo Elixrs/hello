@@ -1,0 +1,26 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+
+print(df['genre'].value_counts(ascending=True))
+
+# resultado :
+Puzzle           580
+Strategy         683
+Fighting         849
+Simulation       874
+Platform         888
+Racing          1249
+Adventure       1303
+Shooter         1323
+Role-Playing    1500
+Misc            1750
+Sports          2348
+Action          3370
+Name: genre, dtype: int64
+
+
+# ejercicio: Algunos géneros del dataset no están bien representados.
+# Queremos combinar los géneros menos representados en la categoría miscelánea, sustituyendo sus valores por 'Misc'.
+# Para empezar, cuenta cuántas veces aparece cada valor de la columna
+# 'genre' llamando al método value_counts() e imprimiendo los resultados en orden ascendente.

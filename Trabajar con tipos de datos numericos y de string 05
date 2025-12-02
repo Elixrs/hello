@@ -1,0 +1,21 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('/datasets/OnlineRetail.csv')
+
+# usando el metodo np.array_equal()
+resultado = np.array_equal(df['Quantity'], df['Quantity'].astype('int'))
+
+print(resultado)
+
+# resultado : True
+
+# ¡Bien hecho! No tuviste que revisar los 50 000 valores para saber que no habría problema para hacer la conversión.
+
+# ejercicio: En el primer paso usa numpy para comprobar si no hay problema con convertir la columna 'Quantity' de float a int
+# sin modificar los valores.
+# Muestra la expresión que evalúa si es True o False.
+
+
+# Guida:Usa `np.array_equal()` para comprobar si `df['Quantity']`
+# es equivalente a sí misma cuando se usa `astype()` para convertirla en el tipo de datos `int`.

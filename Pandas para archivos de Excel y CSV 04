@@ -1,0 +1,17 @@
+# Cargar la librería
+import pandas as pd
+
+# Cargar los datos desde el archivo CSV
+file_path = '/datasets/DigiDB_digimonlist.csv'
+df = pd.read_csv(file_path)
+
+# Inspeccionar la estructura del dataset
+df.info()
+
+# Mostrar las primeras 5 filas del dataset
+# metodo df.head() para acceder a las las primeras listas y el numero 5  para las primeras 5 listas
+print(df.head(5))
+
+# Mostrar las últimas 5 filas del dataset
+# metodo df.tail() para acceder a las ultimas listas , el numero 5 para las 5 ultimas.
+print(df.tail(5))

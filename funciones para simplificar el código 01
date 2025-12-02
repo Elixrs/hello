@@ -1,0 +1,33 @@
+# Inventario inicial
+inventory = [
+    {"titulo": "Cien años de soledad",
+        "autor": "Gabriel García Márquez", "disponible": True},
+    {"titulo": "La casa de los espíritus",
+        "autor": "Isabel Allende", "disponible": True},
+    {"titulo": "Rayuela", "autor": "Julio Cortázar", "disponible": False},
+]
+
+# 1 Definir la función para verificar disponibilidad
+
+
+def check_availability(titulo):
+    for libro in inventory:
+        if libro["titulo"].lower() == titulo.lower():
+            if libro["disponible"]:
+                print(f"'{titulo}' está disponible.")
+            else:
+                print(f"'{titulo}' no está disponible actualmente.")
+            # dejar espacio para que return y print para que salga de la funcion.
+            return
+
+    # deje cuatro espacios para que pueda imprimir que no esta en el inventario.
+    print(f"'{titulo}' no está en el inventario.")
+
+
+    # 2 Crear un bucle para recorrer cada libro
+    # 3 Revisar si el libro está en el inventario y su estado es "disponible"
+    # 4 Imprimir la frase "'{titulo}' está disponible." si está disponible
+    # 5 Si no se encuentra, imprimir el mensaje "'{titulo}' no está en el inventario."
+# Uso de la función
+check_availability("Cien años de soledad")
+check_availability("Pedro Páramo")

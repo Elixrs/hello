@@ -1,0 +1,80 @@
+import pandas as pd
+import numpy as np
+
+# --- 1. Unir df_combined con la tabla de usuarios (usando 'plan') ---
+df_combined = pd.merge(
+    df_combined,
+    # En users la columna del plan se llama 'plan'
+    users[['user_id', 'plan', 'city']],
+    on='user_id',
+    how='left'
+)
+
+print("Columnas después del merge con users:")
+print(df_combined.columns.tolist())
+
+
+# --- 2. Unir df_combined con la tabla de planes ---
+df_combined = pd.merge(
+    df_combined,
+    plans,                      # Tabla con los detalles del plan
+    left_on='plan',             # Columna en df_combined
+    right_on='plan_name',       # Columna en plans
+    how='left'
+)
+
+# Después de los merges, renombrar las columnas que necesitamos
+df_combined = df_combined.rename(columns={
+    'mb_per_month_included_y': 'mb_per_month_included',
+    'minutes_included_y': 'minutes_included',
+    'messages_included_y': 'messages_included',
+    'usd_monthly_pay_y': 'usd_monthly_pay',
+    'usd_per_gb_y': 'usd_per_gb',
+    'usd_per_message_y': 'usd_per_message',
+    'usd_per_minute_y': 'usd_per_minute'
+})
+
+print("Columnas después del merge con plans:")
+print(df_combined.columns.tolist())
+
+# --- 3. Calcular límites y excedentes ---
+# Convertir MB incluidos a GB
+df_combined['gb_included'] = df_combined['mb_per_month_included'] / 1024
+
+# Calcular excedentes (minutos, mensajes y GB)
+df_combined['extra_minutes'] = np.maximum(
+    df_combined['total_minutes_calls'] - df_combined['minutes_included'], 0
+)
+df_combined['extra_messages'] = np.maximum(
+    df_combined['num_messages'] - df_combined['messages_included'], 0
+)
+df_combined['extra_gb'] = np.maximum(
+    df_combined['total_gb_used'] - df_combined['gb_included'], 0
+)
+
+# --- 4. Calcular cargos por excedente ---
+df_combined['charge_minutes'] = df_combined['extra_minutes'] * \
+    df_combined['usd_per_minute']
+df_combined['charge_messages'] = df_combined['extra_messages'] * \
+    df_combined['usd_per_message']
+df_combined['charge_gb'] = df_combined['extra_gb'] * df_combined['usd_per_gb']
+
+# --- 5. Calcular ingreso mensual total ---
+df_combined['monthly_revenue'] = (
+    df_combined['usd_monthly_pay'] +
+    df_combined['charge_minutes'] +
+    df_combined['charge_messages'] +
+    df_combined['charge_gb']
+)
+
+# --- 6. Verificar los resultados ---
+print(
+    df_combined[
+        [
+            'user_id', 'year_month', 'plan',
+            'total_minutes_calls', 'num_messages', 'total_gb_used',
+            'extra_minutes', 'extra_messages', 'extra_gb',
+            'monthly_revenue'
+        ]
+    ].head()
+)

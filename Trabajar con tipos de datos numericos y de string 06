@@ -1,0 +1,31 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('/datasets/OnlineRetail.csv')
+
+# convierte los valores de la columna a enteros
+df['Quantity'] = df['Quantity'].astype('int')  # llamando a .astype()
+
+# Valida el resultado con el metodod info()
+df.info()
+
+# resultado :
+# <class 'pandas.core.frame.DataFrame' >
+RangeIndex: 50000 entries, 0 to 49999
+Data columns(total 8 columns):
+ #   Column       Non-Null Count  Dtype
+--- ------ -------------- -----
+0   InvoiceNo    50000 non-null  object
+1   StockCode    50000 non-null  object
+2   Description  49857 non-null  object
+3   Quantity     50000 non-null  int64
+4   InvoiceDate  50000 non-null  object
+5   UnitPrice    50000 non-null  object
+6   CustomerID   31599 non-null  float64
+7   Country      50000 non-null  object
+dtypes: float64(1), int64(1), object(6)
+memory usage: 3.1 + MB
+
+
+# Guida : Llama a `astype()` en `df['Quantity']` para convertirla en tipo `int` y asigna el resultado de vuelta a `df['Quantity']`.
+# Luego, llama a `info()` en `df`.

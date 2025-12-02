@@ -1,0 +1,15 @@
+financial_info = {
+    'American Express': 93.23,
+    'Boeing': 178.44,
+    'Coca-Cola': 45.15,
+    'Nike': 97.99,
+    'JPMorgan': 96.27,
+    'Walmart': 130.68
+}
+
+walmart_price_1 = financial_info['Walmart']
+# get ayuda a encontrar tu valor en el diccionario
+walmart_price_2 = financial_info.get('Walmart')
+
+print(walmart_price_1)
+print(walmart_price_2)

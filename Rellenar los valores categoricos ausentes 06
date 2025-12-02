@@ -1,0 +1,21 @@
+import pandas as pd
+
+df_logs = pd.read_csv('/datasets/visit_log.csv', keep_default_na=False)
+df_logs['source'] = df_logs['source'].replace('', 'email')
+
+visits = df_logs.groupby('source')['user_id'].count()
+purchases = df_logs.groupby('source')['purchase'].sum()
+
+conversion = purchases / visits  # division entre purchases y visits con /
+print(conversion)
+
+# resultado :
+source
+context    0.058214
+email      0.073174
+other      0.060082
+undef      0.066298
+dtype: float64
+
+# Aunque "otros" tiene más compras en general, parece que el correo electrónico tiene la mejor tasa de conversión.
+# En unas pocas líneas de código, has conseguido calcular la métrica más importante del marketing.

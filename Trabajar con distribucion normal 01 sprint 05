@@ -1,0 +1,22 @@
+from scipy import stats as st
+
+mu = 100500
+sigma = 3500
+
+more_threshold = 111000
+fewer_threshold = 92000
+
+p_more_visitors = 1 - st.norm(mu, sigma).cdf(more_threshold)
+p_fewer_visitors = st.norm(mu, sigma).cdf(fewer_threshold)
+
+print(
+    f'Probabilidad de que el número de visitantes sea superior a {more_threshold}: {p_more_visitors}')
+print(
+    f'Probabilidad de que el número de visitantes sea inferior a {fewer_threshold}: {p_fewer_visitors}')
+
+# resultado :
+# Probabilidad de que el número de visitantes sea superior a 111000: 0.0013498980316301035
+# Probabilidad de que el número de visitantes sea inferior a 92000: 0.0075792194387197245
+
+# guia : 1. Para calcular la probabilidad de obtener un valor por debajo del umbral (pocos visitantes), utiliza `st.norm.cdf()`.
+# 2. Para obtener un valor superior o igual al valor dado, habrá que restar de 1 el resultado de `st.norm.cdf()`.

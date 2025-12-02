@@ -1,0 +1,21 @@
+import pandas as pd
+
+position = pd.read_csv('/datasets/position.csv')
+
+position['timestamp'] = pd.to_datetime(
+    # importante siempre poner que columna quieres modificar, en este caso position['timestamp']
+    position['timestamp'], format='%Y-%m-%dT%H:%M:%S')
+
+print(position.head())
+
+# resultado :
+#            timestamp  level   page_id
+# 0 2019-02-04 13:22:34      1  6ukoNykP
+# 1 2019-02-06 15:30:54      1  Q62R1Ue7
+# 2 2019-02-08 14:53:45      1  GmfSxgPs
+# 3 2019-02-10 16:50:22      2  M56OK96C
+# 4 2019-02-12 14:16:28      1  q2fqVqPc
+
+# Guida :
+# Si dices 'timestamp', estás hablando de la etiqueta
+# Si dices position['timestamp'], estás hablando del contenido de esa caja

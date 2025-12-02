@@ -1,0 +1,29 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/menu_items.csv')
+
+platillos = ['Ensalada', 'Postre']
+df['platillo'] = df['platillo'].where(~df['platillo'].isin(platillos), 'Otros')
+
+print(df['platillo'].value_counts(ascending=True))
+
+# resultado :
+Pescado    14
+Carnes     21
+Otros      23
+Sopa       47
+Pasta      50
+Bebida     80
+Name: platillo, dtype: int64
+# ¡Lo conseguiste! La categoría de otros creció, mientras que las categorías de ensaladas y postres desaparecieron.
+
+# Ejercicio: Crea una variable llamada platillos que contenga una lista de las dos categorías menos representadas del último ejercicio.
+# A continuación, utiliza where() para modificar la columna 'platillo' de df para que los valores de la lista platillos se sustituyan por
+# 'Otros'.
+# El precódigo contiene tu código del último ejercicio que permite imprimir los valores únicos y comprobar el resultado.
+
+
+# Guia:Asigna una lista con dos elementos (`'Ensalada'` y `'Postre'`) a la variable `platillos`.
+# Luego llama a `where()` en la columna `'platillo'` de `df`.
+#  La condición lógica debe utilizar el método `isin()` para comprobar que los valores *no* están en la lista `platillos`,
+# y el valor de reemplazo debe ser `'Otros'`. No olvides asignar el resultado a `df['platillo']`.

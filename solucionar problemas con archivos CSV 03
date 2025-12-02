@@ -1,0 +1,6 @@
+import pandas as pd
+columnas = ["Nombre", "Deporte", "Edad", "Salario"]
+df = pd.read_csv("/datasets/sports.csv", sep=";",
+                 # agregando el metodo decimal=',' convertimos las comas(,) en puntos (.) para poder hacer sumas o operaciones matimaticas.
+                 header=None, names=columnas, decimal=',')
+print(df.head())

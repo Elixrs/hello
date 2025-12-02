@@ -1,0 +1,28 @@
+import pandas as pd
+
+states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas']
+flowers = ['Camellia', 'Forget-me-not',
+           'Saguaro cactus blossom', 'Apple blossom']
+insects = ['Monarch butterfly', 'Four-spotted skimmer dragonfly',
+           'Two-tailed swallowtail', 'European honey bee']
+index = ['state 1', 'state 2', 'state 3', 'state 4']
+
+df = pd.DataFrame({'state': states, 'flower': flowers,
+                  'insect': insects}, index=index)
+
+filtered_df = df.loc['state 2':, 'insect']  # opcion 2 para .loc[]
+print(filtered_df)
+
+# resultado :
+state 2    Four-spotted skimmer dragonfly
+state 3            Two-tailed swallowtail
+state 4                European honey bee
+Name: insect, dtype: object
+
+
+# ejercicio:  Esta vez, utiliza loc[] para obtener solo la columna 'insect' para todos los estados, excepto Alabama.
+
+# La Opción 2 es más eficiente porque:
+- 'state 2': significa "desde 'state 2' hasta el final"
+- Es más corta y fácil de escribir
+- Si agregaras más estados, seguiría funcionando automáticamente

@@ -1,0 +1,26 @@
+import pandas as pd
+
+# DataFrame de la producción de petróleo
+data = {
+    'well_id': ['W1', 'W2', 'W3', 'W4', 'W5', 'W6'],
+    'production_date': ['2024-01-01', '2024-01-01', '2024-01-01', '2024-01-02', '2024-01-02', '2024-01-02'],
+    'oil_volume': [100, None, 200, 300, None, None],
+    'gas_volume': [1000, 800, 950, 1100, 850, 900],
+    'region': ['North', 'North', 'South', 'South', 'West', 'West'],
+    'status': ['active', None, 'active', 'inactive', None, 'active']
+}
+
+# Crear el DataFrame
+df = pd.DataFrame(data)
+
+# Eliminar filas con valores ausentes en la columna 'oil_volume'
+# metodo .dropna(subset=) para borrar todos los NaN
+df.dropna(subset=['oil_volume'], inplace=True)
+
+# Mostrar la cantidad de valores ausentes en cada columna después de la eliminación
+print("Valores ausentes después de la eliminación:")
+print(df.isna().sum())
+
+# Mostrar las columnas restantes del DataFrame
+print("Columnas restantes:")
+print(df.columns)  # se imprime solo las columnas

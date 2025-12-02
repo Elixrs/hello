@@ -1,0 +1,12 @@
+import pandas as pd
+
+raw_date = '20-12-2002Z04:31:00'
+# en el a;o %Y tiene que ir la Z (%YZ) que es el formato de la hora
+clean_date = pd.to_datetime(raw_date, format='%d-%m-%YZ' '%H:%M:%S')
+print(clean_date)
+
+# resultado : 2002-12-20 04:31:00
+
+# guia : - Observa que el día va primero, seguido por el mes y el año.
+# ¿Qué códigos representan ese orden? - Hay una letra “Z” que aparece entre la fecha y la hora.
+# Esa también debe estar literalmente en tu formato. - No olvides usar %H:%M:%S para la parte de la hora en formato de 24 horas.

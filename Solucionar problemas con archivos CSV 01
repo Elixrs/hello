@@ -1,0 +1,10 @@
+import pandas as pd
+
+# el metodo sep=';' separa el punto y coma .
+df = pd.read_csv('/datasets/sports.csv', sep=';')
+print(df.head())
+
+# este es el resultado en tu dataframe(df) arreglado.
+Messi  Football  37   7, 5
+0    Mbappe  Football  24  10, 2
+1  Djokovic    Tennis  36   8, 0

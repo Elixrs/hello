@@ -1,0 +1,7 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_raw.csv')
+
+mis_val = df.isna().sum()  # aqui se aplico el metodo .isna() y .sum() al dataframe(df)
+
+print(mis_val)

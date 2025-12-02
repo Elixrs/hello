@@ -1,0 +1,13 @@
+financial_info = {
+    'American Express': 93.23,
+    'Boeing': 178.44,
+    'Coca-Cola': 45.15,
+    'Nike': 97.99,
+    'JPMorgan': 96.27,
+    'Walmart': 130.68
+}
+
+del financial_info['Nike']
+# con el metodo pop se elemina el elemento deseado
+boeing_price = financial_info.pop('Boeing')
+print(financial_info)

@@ -1,0 +1,28 @@
+import pandas as pd
+
+states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas']
+flowers = ['Camellia', 'Forget-me-not',
+           'Saguaro cactus blossom', 'Apple blossom']
+insects = ['Monarch butterfly', 'Four-spotted skimmer dragonfly',
+           'Two-tailed swallowtail', 'European honey bee']
+index = ['state 1', 'state 2', 'state 3', 'state 4']
+
+df = pd.DataFrame({'state': states, 'flower': flowers,
+                  'insect': insects}, index=index)
+df = df.set_index('state')
+
+# usando el metodo i.loc[] busque el indice 0:3 y el 0 que fueon los 3 primeros nombres de states
+# y la fila de flowers que dio camila por que es la primera en esa fila
+flowers = df.iloc[0:3, 0]
+print(flowers)
+
+# resultado :
+state
+Alabama                  Camellia
+Alaska              Forget-me-not
+Arizona    Saguaro cactus blossom
+Name: flower, dtype: object
+
+# ejercicio :
+Ahora utiliza iloc[] para indexar exactamente la misma parte del DataFrame que usaste en la última tarea. Igual que hicimos antes,
+guarda el resultado en la variable flowers e imprímela.

@@ -1,0 +1,25 @@
+import pandas as pd
+
+# Carga de datos
+df = pd.read_csv('/datasets/music_log_raw.csv')
+
+# Encontrar valores únicos en la columna “genre” y
+# asignarlos a la variable “generos_unicos.
+generos_unicos = df['genre'].unique()
+# Mostrar los géneros únicos
+print("Géneros musicales únicos:", generos_unicos)
+
+# Contar la cantidad de géneros únicos
+cantidad_generos = df['genre'].nunique()
+
+# Imprimir el resultado final
+print("Cantidad de géneros diferentes:", cantidad_generos)
+
+
+# metodo .unique()  - Devuelve todos los valores únicos de una columna - Te muestra qué valores diferentes existen
+
+# metodo .nunique() - Cuenta cuántos valores únicos hay - Te da un número como resultado
+
+# unique(): "Muéstrame QUÉ valores únicos hay"
+
+# nunique(): "Dime CUÁNTOS valores únicos hay"

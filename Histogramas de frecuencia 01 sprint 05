@@ -1,0 +1,13 @@
+import pandas as pd
+
+# el dataset pur_time (del inglés purchase_time que significa tiempo de compra)
+pur_time = pd.Series([36, 44, 73, 32, 44, 29, 63, 60, 55, 74, 61, 26, 76, 40, 39, 28, 69, 61, 54, 58, 47, 41,
+                     70, 51, 58, 36, 71, 47, 74, 59, 50, 78, 59, 48, 67, 53, 67, 52, 38, 55, 53, 53, 43, 77, 44, 63, 63, 54])
+
+pur_time.hist(bins=[15, 30, 45, 60, 75, 90],
+              alpha=0.7)  # escribe tu código aquí
+
+
+# guia : ¡Genial! Podemos ver que, para realizar una compra,
+# los usuarios suelen emplear entre 45 y 60 segundos. Además,
+# deberíamos encontrar alguna forma de comparar este resultado con los tiempos medios de compra antes de que se lanzara la nueva interfaz

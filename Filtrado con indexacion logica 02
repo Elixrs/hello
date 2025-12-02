@@ -1,0 +1,8 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+# con el signo > (mayor) que 90 segundos conseguimos las canciones mayor de 90 segundos
+high_total_play_df = df[df['total play'] > 90]
+
+print(high_total_play_df)

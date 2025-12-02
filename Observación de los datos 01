@@ -1,0 +1,22 @@
+import pandas as pd
+
+column_names = [
+    'country',
+    'name',
+    'capacity_mw',
+    'latitude',
+    'longitude',
+    'primary_fuel',
+    'owner'
+]
+data = pd.read_csv(
+    '/datasets/gpp_modified.csv',
+    sep='|',
+    header=None,
+    names=column_names,
+    decimal=',',
+)
+
+
+# con el metodo data.head() puedes acceder a cualquier columna de tu dataframe
+print(data.head(10))

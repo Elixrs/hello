@@ -1,0 +1,10 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_processed.csv')
+
+metal_ordenado = df[df['genre'] == 'metal'].sort_values(
+    by='total_play', ascending=False)
+# Esta Ordenado de forma descendente el DataFrame
+
+# metodo .head() para ver las filas de tu df, (10) las primeras 10 filas
+print(metal_ordenado.head(10))

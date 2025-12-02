@@ -1,0 +1,38 @@
+import pandas as pd
+
+# Crear DataFrame de productos
+datos = {
+    'nombre': ['Laptop', 'Mouse', 'Teclado', 'Monitor', 'Impresora', 'Tablet'],
+    'categoría': ['Electrónica', 'Accesorios', 'Accesorios', 'Electrónica', 'Oficina', 'Electrónica'],
+    'precio': [1000, 25, 50, 300, 150, 400]
+}
+
+productos = pd.DataFrame(datos)
+print("Datos de productos:\n", productos)
+
+categorias_deseadas = ['Electrónica', 'Oficina']
+
+# usando el metodo .query() para filtrar categoria
+productos_filtrados = productos.query("categoría in @categorias_deseadas")
+
+print("\nProductos filtrados por categoría:\n", productos_filtrados)
+
+# resultado :
+Datos de productos:
+    nombre    categoría  precio
+0     Laptop  Electrónica    1000
+1      Mouse   Accesorios      25
+2    Teclado   Accesorios      50
+3    Monitor  Electrónica     300
+4  Impresora      Oficina     150
+5     Tablet  Electrónica     400
+
+Productos filtrados por categoría:
+    nombre    categoría  precio
+0     Laptop  Electrónica    1000
+3    Monitor  Electrónica     300
+4  Impresora      Oficina     150
+5     Tablet  Electrónica     400
+
+# ejercicio : Tienes un DataFrame con información sobre productos en una tienda, incluyendo el nombre del producto,
+# la categoría y el precio. Quieres filtrar los productos que pertenecen a una lista de categorías usando query().

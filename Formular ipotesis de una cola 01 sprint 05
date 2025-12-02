@@ -1,0 +1,33 @@
+from scipy import stats as st
+import numpy as np
+import pandas as pd
+
+revenue = pd.Series([727, 678, 685, 669, 661, 705, 701, 717,
+                     655, 643, 660, 709, 701, 681, 716, 655,
+                     716, 695, 684, 687, 669, 647, 721, 681,
+                     674, 641, 704, 717, 656, 725, 684, 665])
+
+interested_value = 800
+
+alpha = 0.05  # el nivel de significancia estadística crítica
+
+results = st.ttest_1samp(revenue, interested_value)
+
+print('valor p:', results.pvalue / 2)
+
+if (results.pvalue / 2 < alpha) and (revenue.mean() < interested_value):
+    print(
+        "Rechazamos la hipótesis nula: los ingresos fueron significativamente inferiores a 800 dólares"
+    )
+else:
+    print(
+        "No podemos rechazar la hipótesis nula: los ingresos no fueron significativamente inferiores"
+    )
+
+
+# resultado : valor p: 1.7869152078905522e-22
+# Rechazamos la hipótesis nula: los ingresos fueron significativamente inferiores a 800 dólares
+
+# guia : Utiliza como ejemplo el código de muestra proporcionado en la lección.
+#  El valor *p* (p-value) es el segundo valor (con el índice 1) de la matriz devuelta por la función `st.ttest_1samp()`.
+# También puedes acceder a él a través del atributo `.pvalue`. No olvides dividir el valor *p* entre 2 para una prueba unilateral.

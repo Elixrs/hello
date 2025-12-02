@@ -1,0 +1,6 @@
+import pandas as pd
+
+df = pd.read_csv("/datasets/letters_colors_decimals.csv",
+                 # aca no va header=None por que son solo 3 columnas que queremos mostrar .
+                 sep='$',  decimal='a')
+print(df.head())

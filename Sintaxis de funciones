@@ -1,0 +1,9 @@
+def tenis_players(fname):
+    result = fname + ' es un tenista'
+    return result
+
+
+# agregando con print tenis_player y los nombres de los jugadores se agrega el valor 'es un tenista'
+print(tenis_players('Rafael Nadal'))
+print(tenis_players('Novak Djokovic'))
+print(tenis_players('Roger Federer'))

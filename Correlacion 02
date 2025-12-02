@@ -1,0 +1,15 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/height_weight.csv')
+
+print(df.corr())
+
+# resultado :
+#          height    weight       age      male
+# height  1.000000  0.916526  0.010042  0.760690
+# weight  0.916526  1.000000  0.228538  0.785218
+# age     0.010042  0.228538  1.000000  0.004750
+# male    0.760690  0.785218  0.004750  1.000000
+
+# guia : Parece que pandas devolvió un DataFrame con los coeficientes de correlación para cada par de variables.
+# ¡Genial! En la siguiente lección aprenderemos más sobre eso.

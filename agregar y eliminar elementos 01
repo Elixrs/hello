@@ -1,0 +1,14 @@
+financial_info = {
+    'American Express': 93.23,
+    'Boeing': 178.44,
+    'Coca-Cola': 45.15,
+    'Walt Disney': 119.34,
+    'Nike': 97.99,
+    'JPMorgan': 96.27,
+    'Walmart': 130.68
+}
+
+# con esto agregas una nueva lista y su valor
+financial_info['Microsoft'] = 208.35
+
+print(financial_info)

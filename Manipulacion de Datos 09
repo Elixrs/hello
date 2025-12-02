@@ -1,0 +1,33 @@
+import pandas as pd
+
+df_members = pd.read_csv('/datasets/new_members.csv')
+df_orders = pd.read_csv('/datasets/recent_orders.csv')
+
+df_merged = pd.merge(
+    df_members,
+    df_orders,
+    # Solo incluir coincidencias (clientes con pedidos)
+    how='inner',
+    left_on='id',              # 'id' de df_members (clientes)
+    right_on='user_id',        # 'user_id' de df_orders (clientes)
+    suffixes=('_member', '_order')  # Sufijos para columnas solapadas
+)
+
+
+print(df_merged)  # escribe tu código aquí
+
+# resultado:
+#   id_member      username  ...    service_id      order_timestamp
+# 0       9836  watermelon89  ...  XMD8nVShpINn  2021-06-22Z18:32:59
+# 1       9836  watermelon89  ...  PXAQ9MiP7BvW  2021-06-22Z18:32:59
+# 2       9837       SUPERXD  ...  R2GA1xIVXK1o  2021-06-22Z18:39:12
+# 3       9839    NotHotDog2  ...  NvwWjzW7FydE  2021-06-22Z18:36:21
+# 4       9840      starrats  ...  9KyrlovWf2nH  2021-06-22Z18:34:00
+# 5       9841     beat1box2  ...  fCobsButtJD7  2021-06-22Z18:36:55
+
+# [6 rows x 7 columns]
+
+
+# guia : Llama a merge() en df_members y pásale df_orders como su primera entrada.
+# También debes incluir los parámetros left_on=, right_on= y suffixes=.
+# Realiza una unión interna excluyendo el parámetro how= o configurando how='inner'. Asigna el resultado a df_merged y luego imprímelo.

@@ -1,0 +1,31 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+
+# usando metodo .query() en tu dataframe y sacar las ventas superior a 1 millon
+print(df.query('jp_sales > 1')[['name', 'jp_sales']])
+
+# resultado :
+
+name  jp_sales
+0                                    Wii Sports      3.77
+1                             Super Mario Bros.      6.81
+2                                Mario Kart Wii      3.79
+3                             Wii Sports Resort      3.28
+4                      Pokemon Red/Pokemon Blue     10.22
+...                                         ...       ...
+1885                              Densha De Go! 1.02
+1970                Tag Team Match M.U.S.C.L.E.      1.05
+1971                          Derby Stallion 96      1.04
+1972                           Adventure Island      1.05
+2051  Oshare Majo Love and Berry: DS Collection      1.01
+
+[239 rows x 2 columns]
+
+# Todo lo que teníamos que hacer era utilizar el nombre de la columna en nuestro string de consulta
+# junto con la condición que queríamos filtrar.
+#  Es realmente una cuestión de preferencia la técnica que se utilice para filtrar,
+# pero los strings de consulta suelen ser más fáciles de leer.
+
+# ejercicio: Vamos a filtrar para que solo se seleccionen los juegos cuyas ventas en Japón fueron superiores a un millón de dólares.
+# Imprime solo las columnas 'name' y 'jp_sales' del DataFrame.

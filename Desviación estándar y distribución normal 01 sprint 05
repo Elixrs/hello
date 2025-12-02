@@ -1,0 +1,18 @@
+import numpy as np
+
+adv_mean = 3
+adv_var = 0.25
+adv_std = np.sqrt(adv_var)  # calcula la desviación estándar
+
+# calcula el tiempo de visualización del mensaje
+adv_time = adv_mean + 3 * adv_std
+
+print(f"El tiempo de visualización del mensaje es", adv_time)
+
+
+# resultado :
+# El tiempo de visualización del mensaje es 4.5
+
+# guia: No es necesario restar tres sigmas de la media.
+#  Si muestras el mensaje durante 4.5 segundos,
+# lo verán tanto las personas que necesiten solo 1 segundo para leerlo, como las que necesiten 4 segundos.

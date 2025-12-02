@@ -1,0 +1,16 @@
+# Usuario de ejemplo
+user = ['32415', ' mike_reed ', 32.0, [
+    'ELECTRONICS', 'SPORT', 'BOOKS'], [894, 213, 173]]
+
+# Paso 1: limpiar y dividir el nombre
+user[1] = user[1].strip()  # metodo .strip() para limpiar y dividir el nombre
+
+# Paso 2: dividir el nombre en una lista
+# metodo .split() para dividir el nombre de la lista
+user[1] = user[1].split('_')
+
+# Paso 3: convertir la edad a entero
+user[2] = int(user[2])  # metodo .int() para convertir un numero a entero
+
+# Mostrar resultado
+print(user)

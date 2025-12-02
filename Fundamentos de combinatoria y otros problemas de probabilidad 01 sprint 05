@@ -1,0 +1,8 @@
+from math import factorial
+
+candidates_amount = 5
+
+lists_amount = factorial(candidates_amount)  # metodo factorial()
+print(lists_amount)
+
+# resultado : 120

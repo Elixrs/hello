@@ -1,0 +1,36 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+df['user_score'] = pd.to_numeric(df['user_score'], errors='coerce')
+
+# Selecciono las columnas solicitadas
+cols = ['name', 'developer', 'na_sales', 'eu_sales', 'jp_sales']
+
+# Filtro por valores mayores a cero
+q_string = "na_sales > 0 and eu_sales > 0 and jp_sales > 0"
+
+# Filtro por las columnas y asigno el resultado a df_filtered
+df_filtered = df.query(q_string)[cols]
+
+# Imprimo el data frame completo
+print(df_filtered)
+
+# resultado :
+#                                                   name  ... jp_sales
+0                                             Wii Sports  ...     3.77
+1                                      Super Mario Bros.  ...     6.81
+2                                         Mario Kart Wii  ...     3.79
+3                                      Wii Sports Resort  ...     3.28
+4                               Pokemon Red/Pokemon Blue  ...    10.22
+...                                                  ...  ...      ...
+13275                                       GrimGrimoire  ...     0.03
+13438                                        Wing Island  ...     0.01
+13627                               Smash Court Tennis 3  ...     0.01
+13915      Metal Gear Solid V: The Definitive Experience  ...     0.01
+14626  MeiQ no Chika Ni Shisu: A Maze to Eradicate Th...  ...     0.01
+
+[2455 rows x 5 columns]
+
+# Guia : Intenta utilizar un string de consulta que compruebe si cada columna de ventas es mayor que 0.
+# Usa esta sintaxis: `country_sales > 0`. No olvides utilizar `[cols]` para seleccionar solo las columnas necesarias y
+#  luego muestra en pantalla `df_filtered`

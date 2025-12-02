@@ -1,0 +1,15 @@
+import pandas as pd
+
+data = pd.Series([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+mean_value = data.mean()  # escribe tu código aquí: busca el valor medio en el dataset
+# escribe tu código aquí: para cada elemento del dataset, encuentra su distancia a la media
+spacing_all = data - mean_value
+# escribe tu código aquí: calcula la distancia media
+spacing_all_mean = spacing_all.mean()
+
+print(spacing_all_mean)
+
+
+# Parece como si la distancia media fuera cero,
+# ¡lo que parece tener cero sentido! Sobre todo porque sabemos que los valores del dataset son todos diferentes.
+# Tendremos que abordar esta cuestión de otra manera…

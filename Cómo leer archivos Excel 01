@@ -1,0 +1,8 @@
+import pandas as pd
+
+# pd(pandas) pd.read_excel() metodo para leer tu un archivo Excel
+df_reviews = pd.read_excel('/datasets/product_reviews.xlsx')
+
+print(df_reviews)  # print para ver la informacion.
+
+# Ahora tenemos una idea general de cómo se revisan los productos. Recuerda que por defecto se carga la primera hoja del archivo Excel.

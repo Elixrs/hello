@@ -1,0 +1,16 @@
+import pandas as pd
+
+music = [
+    ['Bob Dylan', 'Like A Rolling Stone'],
+    ['John Lennon', 'Imagine'],
+    ['The Beatles', 'Hey Jude'],
+    ['Nirvana', 'Smells Like Teen Spirit'],
+]
+
+# creas una lista con nombre para el artista y track que seria la cancion.
+entries = ['artist', 'track']
+
+# playlist seria tu dataframe
+playlist = pd.DataFrame(data=music, columns=entries)
+
+print(playlist)  # por ultimo imprimir

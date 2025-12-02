@@ -1,0 +1,8 @@
+# Nombre de la columna con espacios en blanco
+column_name = '  User_ID'
+
+# metodo .strip() para quitar los espacio del usuario en column_name
+# importante ponerle nombre a la variable para que se ejecute el codigo variable(name_stripped)
+name_stripped = column_name.strip()
+
+print(name_stripped)

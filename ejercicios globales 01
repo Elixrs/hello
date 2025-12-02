@@ -1,0 +1,7 @@
+def send_message(text, source='email'):
+    if source == 'email':
+        return 'Message sent via email'
+    elif source == 'sms':
+        return 'Message sent via sms'
+    else:
+        return 'Unknown source'

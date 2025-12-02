@@ -1,0 +1,19 @@
+import pandas as pd
+
+df_stock = pd.read_csv('/datasets/phone_stock.csv')
+df_stock['item_lowercase'] = df_stock['item'].str.lower()
+
+df_stock = df_stock.drop_duplicates(
+    # subset= para 'item_lowercase' y .reset_index(drop=True) para el index
+    subset='item_lowercase').reset_index(drop=True)
+
+print(df_stock.head(5))
+
+
+# resultado
+id                     item  count           item_lowercase
+0  100480924     Apple iPhone Xr 64gb     10     apple iphone xr 64gb
+1  100480959     Xiaomi Redmi 6A 16GB     44     xiaomi redmi 6a 16gb
+2  100480975          HUAWEI P30 lite     38          huawei p30 lite
+3  100480988  Samsung Galaxy A30 32GB     49  samsung galaxy a30 32gb
+4  100481020            Honor 8X 64GB     64            honor 8x 64gb

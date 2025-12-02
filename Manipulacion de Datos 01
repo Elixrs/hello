@@ -1,0 +1,32 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+
+# escribe aquí la definición de tu función
+
+
+def score_group(score):  # Así se verá nuestra función personalizada era_group()
+    """
+    La función devuelve el grupo de puntuacion de los juegos de acuerdo con el score usando estas reglas:
+    —'low'   para score < 60
+    —'medium'  para score < 79
+    —'high'  para score >= 80
+    —'no score' para los demas valores.
+    """
+
+    if score < 60:
+        return 'low'
+    elif score < 79:
+        return 'medium'
+    elif score >= 80:
+        return 'high'
+    else:
+        return 'no score'
+
+
+# imprime los resultados de llamar a la función con estos inputs en orden: 10, 65, 99, np.nan
+print(score_group(10))
+print(score_group(65))
+print(score_group(99))
+print(score_group(np.nan))

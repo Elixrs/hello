@@ -1,0 +1,8 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+# df.shape para acceder a las dimensiones de tu dataframe.
+data_shape = df.shape
+
+print(data_shape)

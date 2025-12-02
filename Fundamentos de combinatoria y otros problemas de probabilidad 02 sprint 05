@@ -1,0 +1,11 @@
+from math import factorial
+
+n = 5  # define aquí el número de candidatos
+k = 3  # define aquí el número necesario de compañeros de equipo
+
+# realiza aquí los cálculos principales
+# se divide , multiplica y el resultado
+combinations = factorial(n) / (factorial(k) * factorial(n-k))
+print(combinations)
+
+# resultado : 10.0

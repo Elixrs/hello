@@ -1,0 +1,37 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+df['user_score'] = pd.to_numeric(df['user_score'], errors='coerce')
+
+developers = ['SquareSoft', 'Enix Corporation', 'Square Enix']
+cols = ['name', 'developer', 'na_sales', 'eu_sales', 'jp_sales']
+
+q_string = "jp_sales > (na_sales + eu_sales) and jp_sales > 0 and na_sales > 0 and eu_sales > 0 and developer in @developers"
+df_filtered = df.query(q_string)[cols]
+print(df_filtered)
+
+# resultado :
+#                                                  name  ... jp_sales
+175                                   Final Fantasy IX  ...     2.78
+633                              Final Fantasy Tactics  ...     1.34
+785                                       Parasite Eve  ...     1.05
+1296                                         Xenogears  ...     0.89
+1780                              Brave Fencer Musashi  ...     0.65
+2362              Dissidia 012: Duodecim Final Fantasy  ...     0.46
+2666                                    Unlimited Saga  ...     0.56
+3029   Final Fantasy Crystal Chronicles: Ring of Fates  ...     0.42
+3433                                    Romancing SaGa  ...     0.47
+3757               Tactics Ogre: Let Us Cling Together  ...     0.27
+4195  Final Fantasy Crystal Chronicles: Echoes of Time  ...     0.27
+4523                                      Dawn of Mana  ...     0.29
+5587                                  Final Fantasy XI  ...     0.15
+
+[13 rows x 5 columns]
+
+
+# Guida : Debes modificar la variable `q_string` . Para empezar, comprueba si la columna `'jp_sales'`
+# es mayor que la suma de las columnas `'na_sales'` y `'eu_sales'`.
+#  Aquí está la sintaxis: `jp_sales > (na_sales + eu_sales)`. A continuación,
+# comprueba si cada columna de ventas es mayor que 0. Usa esta sintaxis: `country_sales > 0`. Por último,
+# comprueba si la columna `'developer'` contiene uno de los valores de `developers`. Usa esta sintaxis: `columna_name in @list_name`.
+#  Utiliza `[cols]` para seleccionar solo las columnas necesarias y luego muestra `df_filtered` en pantalla.

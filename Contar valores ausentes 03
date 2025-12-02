@@ -1,0 +1,18 @@
+import pandas as pd
+
+df_logs = pd.read_csv('/datasets/visit_log.csv')
+print(df_logs['source'].value_counts(dropna=False))
+
+# Podemos ver que la columna 'source' contiene valores para las fuentes de tráfico que nos interesan, que son 'context'
+# para anuncios contextuales, 'email' para correos electrónicos de marketing y 'other' para todo lo demás.
+# También vemos que tenemos 1674 valores ausentes de la columna 'source',
+# lo cual representa aproximadamente el 1% de los datos. También está el valor 'undef', pero todavía no sabemos a qué se refiere.
+
+
+# Resultado :
+# other      133834
+context     52032
+email       12279
+NaN          1674
+undef         181
+Name: source, dtype: int64

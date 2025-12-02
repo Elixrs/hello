@@ -1,0 +1,29 @@
+import warnings
+import pandas as pd
+pd.options.mode.chained_assignment = None
+warnings.filterwarnings('ignore')
+
+analytics_data = pd.read_csv('/datasets/web_analytics_data.csv')
+
+age_avg = analytics_data['age'].mean()
+analytics_data['age'] = analytics_data['age'].fillna(age_avg)
+
+desktop_data = analytics_data[analytics_data['device_type'] == 'desktop']
+mobile_data = analytics_data[analytics_data['device_type'] == 'mobile']
+
+desktop_avg = desktop_data['time'].mean()
+mobile_avg = mobile_data['time'].mean()
+
+desktop_data['time'] = desktop_data['time'].fillna(desktop_avg)
+mobile_data['time'] = mobile_data['time'].fillna(mobile_avg)
+
+
+# esto comprobará si tienes algún valor ausente
+desktop_data.info()
+print()
+mobile_data.info()
+
+
+# desktop_data['time'] → Selecciona la columna 'time' del DataFrame de escritorio
+# .fillna(desktop_avg) → Reemplaza los NaN con el promedio de escritorio
+# desktop_data['time'] = ... → Asigna el resultado de vuelta a la columna

@@ -1,0 +1,14 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+# Filtrar por géneros jazz y rock
+jazz_df = df[df['genre'] == 'jazz']  # dataframe para buscar el genero jazz
+rock_df = df[df['genre'] == 'rock']  # dataframe para buscar el genero rock
+
+# Calcular la duración promedio de escucha para jazz y el tiempo total de escucha para rock
+avg_jazz_duration = jazz_df['total play'].mean()  # jazz_df para buscar el
+total_rock_time = rock_df['total play'].sum()
+
+print("Duración promedio jazz:", avg_jazz_duration)
+print("Tiempo total rock:", total_rock_time)

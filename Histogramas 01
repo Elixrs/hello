@@ -1,0 +1,31 @@
+import pandas as pd
+from matplotlib import pyplot as plt
+
+df = pd.read_csv('/datasets/height_weight.csv')
+
+# separa df en dataframes separados según la edad
+df_20s = df[df['age'] < 30]
+df_30s = df[(df['age'] >= 30) & (df['age'] < 40)]
+df_40s = df[df['age'] >= 40]
+
+# print out the results
+print("La suma de las longitudes del dataframe:",
+      len(df_20s) + len(df_30s) + len(df_40s))
+print("Edad mínima y máxima para df_20s:",
+      df_20s['age'].min(), df_20s['age'].max())
+print("Edad mínima y máxima para df_30s:",
+      df_30s['age'].min(), df_30s['age'].max())
+print("Edad mínima y máxima para df_40s:",
+      df_40s['age'].min(), df_40s['age'].max())
+
+# resultado :
+# La suma de las longitudes del dataframe: 10000
+# Edad mínima y máxima para df_20s: 25 29
+# Edad mínima y máxima para df_30s: 30 39
+# Edad mínima y máxima para df_40s: 40 50
+
+
+# guia: Filtra df en las siguientes condiciones: 'age' < 30, 'age' ≥ 30 y < 40, y 'age' ≥ 40.
+# Asigna cada DataFrame filtrado a la variable adecuada.
+# Para mostrar la suma de las longitudes, usa la función len() con cada DataFrame y súmalos.
+#  Para mostrar los valores mínimo y máximo, llama a los métodos min() y max() en la columna 'age' de cada DataFrame respectivo.

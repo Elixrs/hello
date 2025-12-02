@@ -1,0 +1,14 @@
+import pandas as pd
+
+columns_name = [  # agregas nombres a las columna con tu lista.
+    'Nombre',
+    'Deporte',
+    'Edad',
+    'Salario'
+]
+
+df = pd.read_csv('/datasets/sports.csv', sep=';',
+                 # usando sep=';' separas el punto y coma para que se vea mejor tu codigo
+                 # aca aplicas los nombres a las columnas.
+                 header=None, names=columns_name)
+print(df.head())

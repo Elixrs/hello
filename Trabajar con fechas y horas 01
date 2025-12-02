@@ -1,0 +1,17 @@
+import pandas as pd
+
+string_date = '5/13/13 12:04:00'
+fecha = pd.to_datetime(string_date, format='%m/%d/%y %H:%M:%S')
+print(fecha)
+
+# resultado : 2013-05-13 12:04:00
+
+
+# ¿Qué significa cada símbolo del formato?
+
+# %m = Mes(5 → 05)
+# %d = Día(13)
+# %y = Año de 2 dígitos(13 → 2013)
+# %H = Hora en formato 24h(12)
+# %M = Minutos(04)
+# %S = Segundos(00)

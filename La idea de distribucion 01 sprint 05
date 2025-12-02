@@ -1,0 +1,23 @@
+import numpy as np
+
+exam_results = np.array(
+    [
+        42,  56,  59,  76,  43,  34,  62,  51,  50,  65,
+        66,  50,  46,  5,  79, 99,  51,  26,  35,   8,
+        34,  47,  64,  58,  61,  12,  30,  63,  20,  68
+    ]
+)
+
+
+failed_students = 0  # valor inicial
+
+for score in exam_results:
+    if score < 20:
+        failed_students += 1  # código para los cálculos
+
+print('Número de estudiantes reprobados:', failed_students)
+
+# resultado : Número de estudiantes reprobados: 3
+
+# guia : Tienes que recorrer una por una todas las puntuaciones y comparar cada una de ellas con 20.
+#  Cada vez que encuentres una puntuación inferior a 20, incrementa el contador en 1.

@@ -1,0 +1,12 @@
+import pandas as pd  # aqui conviertes tu lista a dataframe.
+
+music = [
+    ['Bob Dylan', 'Like A Rolling Stone'],
+    ['John Lennon', 'Imagine'],
+    ['The Beatles', 'Hey Jude'],
+    ['Nirvana', 'Smells Like Teen Spirit']
+]
+
+# df = es dataframe pd es pandas mas corto  y esta la parte music y columns.
+df = pd.DataFrame(music, columns=['Artista', 'Canción'])
+print(df)

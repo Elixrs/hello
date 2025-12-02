@@ -1,0 +1,15 @@
+import pandas as pd
+
+df_logs = pd.read_csv('/datasets/visit_log.csv', keep_default_na=False)
+df_logs['source'] = df_logs['source'].replace('', 'email')
+
+visits = df_logs.groupby('source')['user_id'].count()
+print(visits)
+
+# resultado:
+source
+context     52032
+email       13953
+other      133834  # la mayor fuente de trafico es 'other'
+undef         181
+Name: user_id, dtype: int64

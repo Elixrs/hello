@@ -1,0 +1,26 @@
+import pandas as pd
+
+pd.set_option('display.max_columns', None)
+
+column_names = [
+    'country',
+    'name',
+    'capacity_mw',
+    'latitude',
+    'longitude',
+    'primary_fuel',
+    'owner'
+]
+data = pd.read_csv(
+    '/datasets/gpp_modified.csv',
+    sep='|',
+    header=None,
+    names=column_names,
+    decimal=',',
+)
+
+# metodo .describe() y tambien el metodo include= para revisar todas las columnas tipo object .
+data.describe(include='object')
+print(data.describe(include='object'))
+
+# Felicidades por obtener una vista preliminar de todas las columnas del tipo categórica presentes en tu DataFrame!

@@ -1,0 +1,24 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+df['user_score'] = pd.to_numeric(df['user_score'], errors='coerce')
+
+df_filtered = df[(df['year_of_release'] >= 1980) &
+                 (df['year_of_release'] < 1990)]
+
+print(df_filtered.head(5))
+
+# resultado :
+#                   name platform  ...  critic_score user_score
+1     Super Mario Bros.      NES  ...           NaN        NaN
+5                Tetris       GB  ...           NaN        NaN
+9             Duck Hunt      NES  ...           NaN        NaN
+21     Super Mario Land       GB  ...           NaN        NaN
+22  Super Mario Bros. 3      NES  ...           NaN        NaN
+
+[5 rows x 11 columns]
+
+
+# ejercicio: Sigamos trabajando el vg_sales dataset.
+# Tu objetivo es filtrar de tal forma la información que solo te quedes con los juegos que fueron lanzados en la década de los 80.
+# Asigna el resultado a una variable llamada df_filtered y luego imprime las primeras 5 filas.

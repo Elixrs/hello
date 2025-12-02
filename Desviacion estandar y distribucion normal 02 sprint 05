@@ -1,0 +1,49 @@
+porcentaje_correctas = 0.03
+participantes = 6000
+porcentaje_std = 0.004
+
+# calcula el número promedio de personas que responden correctamente
+quiz_mean = porcentaje_correctas * participantes
+# calcula la desviación estándar del número total de participantes
+quiz_std = porcentaje_std * participantes
+
+# calcula el límite inferior del intervalo
+quiz_bottom_line = quiz_mean - 3 * quiz_std
+# calcula el límite superior del intervalo
+quiz_top_line = quiz_mean + 3 * quiz_std
+
+print(f"Intervalo: {quiz_bottom_line} - {quiz_top_line}")
+
+
+# resultado:Sabes aproximadamente cuántos ganadores y ganadoras puedes esperar,
+# pero ¿cuántos premios deberías llevar: 108, 252 o algo intermedio? Parece que depende de la suerte que tengan los participantes.
+# Si quieres que el número de premios a repartir sea menor, ¡organiza el concurso el viernes 13! O mejor aún,
+#  entrega algo pequeño y compacto como memorias USB o globos (aire no incluido).
+
+# guia :Almacena la diferencia entre el número promedio de ganadores y las tres sigmas en la variable `quiz_bottom_line`.
+# Almacena la suma del número promedio de ganadores más las tres sigmas en la variable `quiz_top_line`.
+
+
+# Ejercicio,sprint5 :Tu empresa organiza un concurso tipo trivia en un centro comercial.
+
+# Por su experiencia en concursos similares, sabes que, por término medio,
+#  el 3% de los participantes responden correctamente a las preguntas, y que la desviación estándar es del 0.4%.
+
+# Esperas que 6000 personas se presenten al concurso.
+# Tienes que calcular cuántas personas podrían ganar para preparar una cantidad suficiente de premios.
+#  En concreto, hay que determinar un intervalo para el número de ganadores tal que, con un 99.7% de probabilidad,
+# el número real esté dentro de ese intervalo (es decir, entre x y y).
+#  Vamos a utilizar la regla de las tres sigmas para calcular dicho intervalo.
+# Una vez que lo hayas calculado, deberás imprimir los resultados de la siguiente manera: Intervalo: ... - ...#(¡fíjate en los espacios alrededor del guion!)
+# Para que esta tarea no sea tan abrumadora, vamos a desglosarla en pasos más sencillos:
+#    Para empezar, calcula el promedio esperado de respuestas correctas de los participantes.
+#    Teniendo en cuenta el porcentaje medio de participantes que, como se espera, responderán correctamente (3% o 0.03)
+#    y el número previsto de participantes (6000), calcula la media y almacena el valor resultante en la variable quiz_mean.
+#    A continuación, a partir del número total de participantes previstos (6000) y de un porcentaje dado para la desviación estándar
+#    (0.4% o 0.004), calcula la desviación estándar para el número de personas que participarán en el concurso.
+#    Este valor, σ, debe almacenarse en la variable quiz_std.
+#    Por último, se nos pide que determinemos un intervalo para el número de ganadores. Según la regla de las tres sigmas,
+#    este intervalo comprende tres desviaciones estándar a la izquierda y 3 a la derecha de la media.
+#    Calcula los límites de dicho intervalo y guarda el límite inferior en la variable quiz_bottom_line y
+#     el límite superior en la variable quiz_top_line.
+#    Muestra los resultados en el formato requerido.

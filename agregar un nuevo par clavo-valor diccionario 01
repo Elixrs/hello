@@ -1,0 +1,13 @@
+ financial_info = {
+    
+    'American Express': 93.23,
+    'Boeing': 178.44,
+    'Coca-Cola': 45.15,
+    'Nike': 97.99,
+    'JPMorgan': 96.27,
+    'Walmart': 130.68
+}
+
+# asi se agregar un nuevo clave-valor a tu diccionario
+financial_info['Walt Disney'] = 119.34
+print(financial_info)

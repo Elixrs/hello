@@ -1,0 +1,17 @@
+import pandas as pd
+
+# Cargar los datos
+df = pd.read_csv('/datasets/steam-200k.csv')
+df.columns = ['user_id', 'game_title', 'behavior_name', 'value']
+
+# 1.1 Contar cuántas filas duplicadas hay en el DataFrame antes de limpiarlo
+duplicados_iniciales = df.duplicated().sum()  # metodo que cuenta los duplicados
+
+# print duplicados_iniciales es tu string
+print("Número de filas duplicadas (Inicial): ", duplicados_iniciales)
+
+# 1.2 Eliminar todas las filas duplicadas del DataFrame
+df = df.drop_duplicates()  # metodo .drop_duplicates() elimina los duplicados
+
+# Confirmar que las filas duplicadas han sido eliminadas correctamente
+print("Número de filas duplicadas (Final): ", df.duplicated().sum())

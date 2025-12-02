@@ -1,0 +1,36 @@
+# esta función imprime la tabla filtrada
+def print_movie_info(data):
+    for movie in data:
+        print(movie)
+
+
+def filter_by_genre(data, genre='drama'):
+    filtered_result = []
+    for row in data:
+        if genre in row[3]:
+            filtered_result.append(row)
+    return filtered_result
+
+
+movies_info = [
+    ['The Shawshank Redemption', 'USA', 1994, 'drama', 142, 9.111],
+    ['The Godfather', 'USA', 1972, 'drama, crime', 175, 8.730],
+    ['The Dark Knight', 'USA', 2008, 'fantasy, action, thriller', 152, 8.499],
+    ["Schindler's List", 'USA', 1993, 'drama', 195, 8.818],
+    ['The Lord of the Rings: The Return of the King', 'New Zealand',
+        2003, 'fantasy, adventure, drama', 201, 8.625],
+    ['Pulp Fiction', 'USA', 1994, 'thriller, comedy, crime', 154, 8.619],
+    ['The Good, the Bad and the Ugly', 'Italy', 1966, 'western', 178, 8.521],
+    ['Fight Club', 'USA', 1999, 'thriller, drama, crime', 139, 8.644],
+    ['Harakiri', 'Japan', 1962, 'drama, action, history', 133, 8.106],
+    ['Good Will Hunting', 'USA', 1997, 'drama, romance', 126, 8.077]
+]
+
+movies_filtered = filter_by_genre(movies_info)
+print_movie_info(movies_filtered)
+
+
+# guia : En el cuerpo de la función,
+#  para cada sublista comprueba si el valor en `genre=` está en el valor de la sublista en el índice 3.
+#  Utiliza el operador in para comprobar si el género que necesitas existe en la cadena,
+#  pero recuerda que los parámetros obligatorios deben declararse antes que los opcionales.

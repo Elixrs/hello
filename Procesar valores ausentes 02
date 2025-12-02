@@ -1,0 +1,16 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_raw.csv')
+
+columns_to_replace = ['genre', 'Artist', 'track']
+
+for col in columns_to_replace:
+    df[col] = df[col].fillna('no_info')
+
+print(df.isna().sum())
+
+
+# Ahora dominas el procesamiento de valores ausentes.
+# Ten en cuenta que, por ahora, hemos dejado valores ausentes en la columna total play.
+# La razón por la que no hemos reemplazado los valores NaN por el string no_info es que total play es una columna
+# que contiene valores numéricos y no queremos mezclarla con strings como no_info.

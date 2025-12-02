@@ -1,0 +1,8 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+# df[df['genre'] == 'jazz;] este comando es para filtar solo lo que esta en la lista jazz del dataframe.
+jazz_df = df[df['genre'] == 'jazz']
+
+print(jazz_df)

@@ -1,0 +1,17 @@
+import pandas as pd
+
+sales_data = [
+    ['Laptop', 'North America', 120, 120000],
+    ['Smartphone', 'Europe', 340, 170000],
+    ['Tablet', 'Asia', 210, 63000],
+    ['Headphones', 'South America', 150, 45000],
+    ['Smartwatch', 'Africa', 95, 28500]
+]
+
+# entries es el nombre para la entrada de productos , region , unidades vendidas y ingreso en dolares.
+entries = ['product_name', 'region', 'units_sold', 'revenue']
+
+# df del dataframe para ingresar las ventas y entries .
+df = pd.DataFrame(sales_data, columns=entries)
+
+print(df)  # print el dataframe (df)

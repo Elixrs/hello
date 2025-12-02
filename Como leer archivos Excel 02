@@ -1,0 +1,7 @@
+import pandas as pd
+
+# codigo para leer la columna prudcts.
+df_products = pd.read_excel(
+    '/datasets/product_reviews.xlsx', sheet_name='products')
+
+print(df_products)  # recuerda usar el print para ver la informacion.

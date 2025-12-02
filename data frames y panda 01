@@ -1,0 +1,7 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+data_types = df.dtypes
+
+print(data_types)

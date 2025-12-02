@@ -1,0 +1,12 @@
+import pandas as pd
+
+df_stock = pd.read_csv('/datasets/phone_stock.csv')
+
+# poner todo en minuscula con.lower y guardarlo en la nueva columna 'item_lowecase'
+df_stock['item_lowercase'] = df_stock['item'].str.lower()
+
+print(df_stock.head(5))
+
+
+# Cambia los nombres de los modelos de teléfonos a minúsculas usando el método str.lower()
+# y guárdalos en una nueva columna llamada 'item_lowercase', pero conserva también la columna original 'item'

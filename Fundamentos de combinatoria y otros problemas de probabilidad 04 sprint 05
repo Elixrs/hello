@@ -1,0 +1,18 @@
+from math import factorial
+
+tasks = 10  # introduce aquí el número total de tareas
+chosen = 3  # introduce aquí el número de tareas a elegir
+
+# calcula el número de combinaciones disponibles
+combinations = factorial(tasks) / (factorial(chosen) * factorial(tasks-chosen))
+probability = 1 / combinations  # calcula aquí el resultado final
+
+print(probability)
+
+# resultado : 0.008333333333333333
+
+
+# guia : 1. El número total de tareas es 10. 2.
+# El número de tareas a elegir es 3. 3. Para calcular el número de combinaciones,
+# utiliza la fórmula n!/k!(n-k!), donde n es el número total de tareas y k es el número de tareas a elegir. 4.
+#  Solo hay una combinación ganadora, así que para hallar la probabilidad, divide uno entre el número total de combinaciones posibles.

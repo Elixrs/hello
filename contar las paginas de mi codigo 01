@@ -1,0 +1,28 @@
+books = [
+    {
+        'author': 'George Orwell',
+        'book': '1984',
+        'page_count': 328
+    },
+    {
+        'author': 'Leo Tolstoy',
+        'book': 'Guerra y paz',
+        'page_count': 1225
+    },
+    {
+        'author': 'Ralph Ellison',
+        'book': 'El hombre invisible',
+        'page_count': 624
+    },
+    {
+        'author': 'Antoine de Saint-Exupéry',
+        'book': 'El principito',
+        'page_count': 96
+    }
+]
+
+total_page_count = 0
+
+for book in books:
+    # con el metido for puedes contar cuantas paginas hay en el libro
+    total_page_count += book['page_count']

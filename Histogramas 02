@@ -1,0 +1,29 @@
+import pandas as pd
+from matplotlib import pyplot as plt
+
+df = pd.read_csv('/datasets/height_weight.csv')
+
+df_20s = df[df['age'] < 30]
+df_30s = df[(df['age'] >= 30) & (df['age'] < 40)]
+df_40s = df[df['age'] >= 40]
+
+df_20s['weight'].plot(kind='hist',
+                      bins=20,
+                      title='Weight / lbs',
+                      ylabel='Frequency'
+                      )
+
+df_30s['weight'].plot(kind='hist', bins=20, alpha=0.6)
+df_40s['weight'].plot(kind='hist', bins=20, alpha=0.3)
+
+plt.legend(["20s", "30s", "40s"])
+
+plt.show()
+
+# resultado : ¡Es correcto!¡Muy bien, eso fue un gran trabajo!
+# Pero valió la pena por la cantidad de información que obtenemos de una sola gráfica.
+# Por ejemplo, vemos dos picos para cada grupo de edad, vemos que el grupo de 20 años está subrepresentado,
+#  y que el peso tiende a aumentar con la edad.
+# Esta información pueden generar aún más preguntas para explorar.
+# El proceso del análisis de datos suele ser orgánico de esta manera:
+# la información conduce a preguntas que, a su vez, llevan a más información, y así sucesivamente.

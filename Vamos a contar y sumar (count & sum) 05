@@ -1,0 +1,17 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+# Filtrar por géneros clásicos y pop
+classical_df = df[df['genre'] == 'classical']
+pop_df = df[df['genre'] == 'pop']
+
+# Calcular el conteo de canciones clásicas y el tiempo total de pop
+
+# metodo .count() para contar el numedo de veces que se repite classical en la lista.
+classical_count = classical_df['track'].count()
+# metodo .sum() para sumar el total del tiempo que escucharon la lista pop.
+pop_total_time = pop_df['total play'].sum()
+
+print("Número de canciones clásicas:", classical_count)
+print("Tiempo total pop:", pop_total_time)

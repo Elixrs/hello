@@ -1,0 +1,16 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_processed.csv')
+
+time_by_genre = df.groupby('genre')['total_play'].sum()
+
+time_by_genre_sort = time_by_genre.sort_values(ascending=False)
+
+print(time_by_genre_sort.head(10))
+
+
+# time_by_genre ya tiene los datos que necesitas ordenar.
+
+# .sort_values() sin by= porque es una Serie (solo una columna)
+
+# ascending=False para orden descendente (mayor a menor)

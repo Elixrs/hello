@@ -1,0 +1,21 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_processed.csv')
+
+pop_tracks = df[df['genre'] == 'pop']
+pop_tracks = pop_tracks[pop_tracks['total_play'] > 30]
+
+pop_mean = pop_tracks['total_play'].mean()  # escribe tu código aquí
+pop_median = pop_tracks['total_play'].median()  # escribe tu código aquí
+
+print(pop_mean)
+print(pop_median)
+
+
+# resultado :
+# 186.25846123970464
+# 197.996
+
+
+# De manera que si nuestra media y mediana están entre 186 y 197 segundos y nuestro valor máximo fue 1158,
+# ¡probablemente podemos considerarlo un valor atípico!

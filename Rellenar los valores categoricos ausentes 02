@@ -1,0 +1,14 @@
+import pandas as pd
+
+# `keep_default_na=False` para que los valores vacíos sean `''` en lugar de `NaN`
+df_logs = pd.read_csv('/datasets/visit_log.csv', keep_default_na=False)
+
+df_sources = df_logs['source'].unique()
+print(df_sources)
+
+# resultado :
+['other' 'email' 'context' '' 'undef']
+
+# Tenemos 5 valores distintos para la categoría de fuente de tráfico, y los valores ausentes ahora se representan con ''.
+# El valor para las fuentes de correo electrónico de marketing es el string 'email'.
+# De acuerdo con nuestro análisis, queremos convertir todos los valores de '' a 'email'.

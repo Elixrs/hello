@@ -1,0 +1,23 @@
+import pandas as pd
+
+column_names = [
+    'country',
+    'name',
+    'capacity_mw',
+    'latitude',
+    'longitude',
+    'primary_fuel',
+    'owner'
+]
+data = pd.read_csv(
+    '/datasets/gpp_modified.csv',
+    sep='|',
+    header=None,
+    names=column_names,
+    decimal=',',
+)
+
+# aplique el metodo .describe() para ver la informacion de mi dataframe.
+data['primary_fuel'].describe()
+# tienes que ponerlo todo en el print para que imprima bien.
+print(data['primary_fuel'].describe())

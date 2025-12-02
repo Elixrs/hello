@@ -1,0 +1,6 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+# print(df.info()) para acceder a tu informacion en el dataframe.
+print(df.info())

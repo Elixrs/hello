@@ -1,0 +1,16 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_raw.csv')
+
+# Renombrar las columnas utilizando el parámetro inplace
+new_columns = {  # creo un diccionario nuevo para renombrar los nombres que estan desordenados
+    '  user_id': 'user_id',
+    'total play': 'total_play',
+    'Artist': 'artist'
+}
+
+# aplicando el metodo inplace= agregas directamente los nuevos nombres de tu diccionario new_columns
+df_new_cols = df.rename(columns=new_columns, inplace=True)
+
+# Mostrar las columnas para confirmar los cambios
+print(df.columns)

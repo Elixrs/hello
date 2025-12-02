@@ -1,0 +1,73 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+genre = df['genre']
+pop_genre_check = genre == 'pop'
+pop_df = df[pop_genre_check]
+
+print(pop_df)
+
+#        user_id  total play  ... genre                                         track
+# 0      BF6EA5AF   92.851388  ...   pop                                        Musica
+# 4      82F52E69  193.776327  ...   pop                        Me And My Broken Heart
+# 8      A5E0D927    3.161000  ...   pop          The Name of This Next Song Is Called
+# 11     596A4517    0.000000  ...   pop                                       Bye Bye
+# 13     79D2876C    2.000000  ...   pop                            Räuber und Gendarm
+# 17     AEAEF451   15.000000  ...   pop                                   General Zod
+# 33     65608E7C    0.100000  ...   pop                         Don't Dream It's Over
+# 41     2F4F0630    0.100000  ...   pop                                   Cool Breeze
+# 48     EE908C06   84.519176  ...   pop                              Eye Of The Tiger
+# 55     D52D00EA    8.443000  ...   pop                                Люби меня люби
+# 59     A40236D7   43.000000  ...   pop                                  Bitches Tune
+# 78     20B8C4FB  211.565714  ...   pop                            Rakkautta ja rahaa
+# 81     FA279DD2    1.523753  ...   pop                            Up Where We Belong
+# 85     F6939D17  187.000000  ...   pop                Cold (Reprise Maroon 5 Future)
+# 86     AC0AF747    0.100000  ...   pop                                      Slow Day
+# 96     7F38A6F8   50.040000  ...   pop                      When It’s Done It’s Done
+# 97     510D9BEE  213.004754  ...   pop                        Anna Mun Jäädä Sun Luo
+# 98     A95CC18E   31.696000  ...   pop                                       Gravity
+# 101    11B83119   48.000000  ...   pop                                    All I Want
+# 103    14B73B59   31.323301  ...   pop                                  Se te ne vai
+# 111    9C533CB1  248.450612  ...   pop                   Lullaby to an Anxious Child
+# 112    748BE5A3    0.100000  ...   pop                                   Sessiz Gemi
+# 114    E3B367E9    2.000000  ...   pop                                    110% Intro
+# 122    66177A34    0.100000  ...   pop                                   Butterflies
+# 125     1451927  162.075000  ...   pop                                 Toda la Noche
+# 137    FB7E4FD8  164.931000  ...   pop                                        Famous
+# 139    8C1DC60F    0.000000  ...   pop  If You Should Ever Go (Castles Turn to Sand)
+# 144    D5EDEFF9    2.436113  ...   pop                        Første gangen om igjen
+# 148    24C2E9D6  213.786083  ...   pop                                    D.i.s.c.o.
+# 164    F14E5BD3   46.220238  ...   pop                                     Рисунками
+# ...         ...         ...  ...   ...                                           ...
+# 67702  CAB52D09  250.723265  ...   pop                         I Want What She's Got
+# 67712  9E6700D3  184.000000  ...   pop     Näin on käynyt sorry - Ciao Bambino Sorry
+# 67728  322B4139   85.000000  ...   pop                               Bird In My Hand
+# 67743  2135677B    2.538000  ...   pop                                       Unknown
+# 67755  728D3E60    1.661000  ...   pop                            Strings For Yasmin
+# 67756  9B782CAB  184.436000  ...   pop                                          Time
+# 67760  5D9AAD37    4.809582  ...   pop                                          Easy
+# 67792  37667BDA  104.000000  ...   pop                                     Новый год
+# 67799  7520B6B0  249.000000  ...   pop                             Всё что я загадаю
+# 67800  6B7725ED   89.463755  ...   pop                                         Seven
+# 67802  14FD167E  216.000000  ...   pop                       Falling Without Feeling
+# 67805  49E8BFDB  141.000000  ...   pop                                     Inima Mea
+# 67806  3DB27335  180.610612  ...   pop                                   In The Dark
+# 67841  8E37B76A   41.500924  ...   pop                                    Hard Times
+# 67848  32CD3D55   12.644381  ...   pop                             Den jag väntat på
+# 67857  17FFC0A9    0.100000  ...   pop                                       Erkusov
+# 67859  6ADA7378    3.705316  ...   pop                    This Bleeding Blue Country
+# 67863  7AF8FAC3  295.732208  ...   pop                           Chant Like A Mantra
+# 67866  7101BDDA   27.020000  ...   pop                                         04:55
+# 67870   C79D0D0  179.000000  ...   pop                                     Sans Amis
+# 67878   CE66E39    0.919000  ...   pop                               Yazmaları Oyalı
+# 67884  EF163B91   18.199002  ...   pop  I Can't Feel My Face (Tribute to The Weeknd)
+# 67892  CC1A9140   87.778000  ...   pop                               Stimmen im Wind
+# 67902  293E3300   39.691469  ...   pop                                Rock Me Gently
+# 67911  DA333564  283.036735  ...   pop                              Que Me Quedes Tú
+# 67921  2D758485   18.554472  ...   pop                                 Вера Вероника
+# 67937  8B6704A2   68.495839  ...   pop                                     Dear Love
+# 67952  B0DF0750   44.200000  ...   pop          Du hast den schönsten Arsch der Welt
+# 67958  2E27DF51  220.551837  ...   pop                                 Girls On Fire
+# 67961  DB0038A8   11.529112  ...   pop                                          Home
+# [8663 rows x 5 columns]

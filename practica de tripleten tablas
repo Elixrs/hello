@@ -1,0 +1,24 @@
+
+employees = [['Alice', 75000, 'Desarrollador', 'Júnior'],
+             ['Bob', 68000, 'Diseñador', 'Semi sénior'],
+             ['Charlie', 78000, 'Desarrollador', 'Júnior'],
+             ['David', 85000, 'Gerente', 'Sénior'],
+             ['Eve', 80000, 'Desarrollador', 'Semi sénior']]
+
+# Define el nombre que actualizarás, el incremento de salario y el umbral especificado de salario para el cambio de antigüedad
+name_to_update = "Alice"
+salary_increase = 10000
+salary_threshold = 80000
+new_seniority = "Sénior"
+
+## TU CÓDIGO ##
+# Modifica la tabla
+for employee in employees:  # por cada empleado
+    if employee[0] == name_to_update:
+        employee[1] += salary_increase
+
+    if employee[1] > salary_threshold:
+        employee[3] = new_seniority
+
+# Mostrar la tabla actualizada
+print(employees)

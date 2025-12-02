@@ -1,0 +1,14 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+
+df['genre'].unique()
+
+print(df['genre'].unique())
+
+# resultado :
+# ['Sports' 'Platform' 'Racing' 'Role-Playing' 'Puzzle' 'Misc' 'Shooter' 'Simulation' 'Action' 'Fighting' 'Adventure' 'Strategy']
+
+
+# ejercicio : Imprime una lista de todos los géneros únicos en el conjunto de datos llamando al método unique() en la columna 'genre'.
+# Solamente imprime la columna 'genre'

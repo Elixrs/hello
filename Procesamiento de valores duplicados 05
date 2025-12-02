@@ -1,0 +1,22 @@
+import pandas as pd
+
+# Cargar los datos
+df = pd.read_csv('/datasets/steam-200k.csv')
+df.columns = ['user_id', 'game_title', 'behavior_name', 'value']
+
+# Mostrar el número de filas duplicadas antes de eliminarlas
+print("Número de filas duplicadas (Inicial): ", df.duplicated().sum())
+
+# Eliminar las filas duplicadas y guardar el resultado en un nuevo DataFrame
+df_sin_duplicados = df.drop_duplicates()  # metodo .drop_duplicates
+
+# Verificar que ya no hay filas duplicadas
+print("Número de filas duplicadas (Final): ",
+      df_sin_duplicados.duplicated().sum())
+
+# 1. Reiniciar los índices del DataFrame limpio (sin duplicados)
+df_sin_duplicados = df_sin_duplicados.reset_index(drop=True)
+
+# 2. Mostrar todos los valores únicos en la columna 'game_title'
+valores_unicos = df_sin_duplicados['game_title'].unique()
+print(f"Valores únicos: {valores_unicos}")

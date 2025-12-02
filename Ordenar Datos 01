@@ -1,0 +1,11 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_processed.csv')
+
+# sort_values() es el método correcto para ordenar,  # by='user_id'especifica la columna por la cual ordenar
+df_ordenado = df.sort_values(by='user_id', ascending=False)
+
+print(df_ordenado.head(10))  # Mostrar las primeras 10 fila
+
+
+# ascending=True (por defecto) → orden ascendente (1, 2, 3...) ,ascending=False → orden descendente (3, 2, 1...)

@@ -1,0 +1,24 @@
+import pandas as pd
+
+column_names = [
+    'country',
+    'name',
+    'capacity_mw',
+    'latitude',
+    'longitude',
+    'primary_fuel',
+    'owner'
+]
+data = pd.read_csv(
+    '/datasets/gpp_modified.csv',
+    sep='|',
+    header=None,
+    names=column_names,
+    decimal=',',
+)
+
+sample = data.sample(5, random_state=543210)
+print(sample)
+print()
+
+data.info()  # el metodo .info() para ver la informacion detallada de tus datos "no se necesita el print()"

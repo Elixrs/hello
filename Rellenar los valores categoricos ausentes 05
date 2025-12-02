@@ -1,0 +1,18 @@
+import pandas as pd
+
+df_logs = pd.read_csv('/datasets/visit_log.csv', keep_default_na=False)
+df_logs['source'] = df_logs['source'].replace('', 'email')
+
+purchases = df_logs.groupby('source')['purchase'].sum()
+# Agrupa los datos por fuente de tráfico, luego llama al método `sum()` en la columna `'purchase'`.
+#  Asigna el resultado a una variable llamada `purchases` y luego imprímelo.
+
+print(purchases)
+
+# resultado:
+source
+context    3029
+email      1021
+other      8041
+undef        12
+Name: purchase, dtype: int64

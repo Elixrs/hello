@@ -1,0 +1,19 @@
+import pandas as pd
+from matplotlib import pyplot as plt
+
+df = pd.read_csv('/datasets/sbux.csv')
+cols = ['open', 'close']
+
+df.plot(x='date',
+        y=['open', 'close'],
+        title='Historic SBUX price',
+        rot=50,
+        legend=False,
+        xlabel='Date',
+        ylabel='Share price / USD',
+        )
+
+plt.show()
+
+# Parece que hubo algunos días en los que los precios de apertura y cierre fueron significativamente diferentes, pero nada demasiado grande.
+# grafico en la pagina tripleten

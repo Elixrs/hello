@@ -1,0 +1,16 @@
+import pandas as pd
+
+df_logs = pd.read_csv('/datasets/visit_log.csv', keep_default_na=False)
+
+# metodo .replace() para cambiar el'' , por 'email'
+df_logs['source'] = df_logs['source'].replace('', 'email')
+
+print(df_logs['source'].unique())
+
+# resultado :
+['other' 'email' 'context' 'undef']
+
+# ¡Lo conseguiste! No hay más valores '' en la columna 'source'.
+#  Todas nuestras fuentes de visitas están contabilizadas.
+# Ahora que hemos rellenado los valores ausentes, podemos calcular la tasa de conversión para cada fuente.
+# Para ello, tendremos que utilizar la función groupby() para la agregación. Vamos a repasar rápidamente cómo utilizarlo.

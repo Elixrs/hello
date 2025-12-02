@@ -1,0 +1,6 @@
+import pandas as pd
+
+df_logs = pd.read_csv('/datasets/visit_log.csv')
+
+# el metodo .info() en tu dataframe para revisar la informacion deseada.
+df_logs.info()

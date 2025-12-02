@@ -1,0 +1,29 @@
+import pandas as pd
+
+data = {
+    'user_id': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    'region': ['North', 'South', 'North', 'South', 'North', 'South', 'North', 'South', 'North', 'South'],
+    'age': [25, 34, 45, None, 38, 50, None, 28, 42, 35],
+    'revenue': [120, 80, 130, 95, None, None, 125, 90, None, 110]
+}
+
+# Convertir a DataFrame
+sales_data = pd.DataFrame(data)
+
+# Aquí es donde escribirás tu código para filtrar y calcular el promedio
+# nombre del dataframe para modificar
+north_data = sales_data[sales_data['region'] == 'North']
+south_data = sales_data[sales_data['region'] == 'South']
+
+# Para calcular los promedios
+north_avg = north_data['revenue'].mean()
+south_avg = south_data['revenue'].mean()
+
+# Imprimir los promedios calculados - Completa el código
+print(f"Promedio de ingresos en 'North': {north_avg}")
+print(f"Promedio de ingresos en 'South': {south_avg}")
+
+# Comprobar si hay valores ausentes
+north_data.info()
+print()
+south_data.info()

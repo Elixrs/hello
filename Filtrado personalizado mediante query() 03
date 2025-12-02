@@ -1,0 +1,78 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+
+handhelds = ['3DS', 'DS', 'GB', 'GBA', 'PSP']
+# @handhelds: el símbolo @ permite usar variables externas dentro de query()
+print(df.query('platform not in @handhelds')[['name', 'platform']])
+
+# Recuerda que puedes usar tanto in como not in.
+# Además, observa cómo la variable handhelds es externa al DataFrame,
+# tenemos que precederla con el símbolo @ en nuestro string de consulta,
+# de lo contrario pandas intentará encontrar una columna llamada 'handhelds' y nos arrojará un error cuando no la encuentre.
+
+# resultado :
+                                                    name platform
+0                                             Wii Sports      Wii
+1                                      Super Mario Bros.      NES
+2                                         Mario Kart Wii      Wii
+3                                      Wii Sports Resort      Wii
+7                                               Wii Play      Wii
+8                              New Super Mario Bros. Wii      Wii
+9                                              Duck Hunt      NES
+13                                               Wii Fit      Wii
+14                                    Kinect Adventures! X360
+15                                          Wii Fit Plus      Wii
+16                                    Grand Theft Auto V      PS3
+17                         Grand Theft Auto: San Andreas      PS2
+18                                     Super Mario World     SNES
+22                                   Super Mario Bros. 3      NES
+23                                    Grand Theft Auto V     X360
+24                           Grand Theft Auto: Vice City      PS2
+28                                Gran Turismo 3: A-Spec      PS2
+29                        Call of Duty: Modern Warfare 3     X360
+31                             Call of Duty: Black Ops 3      PS4
+32                               Call of Duty: Black Ops     X360
+34                            Call of Duty: Black Ops II      PS3
+35                            Call of Duty: Black Ops II     X360
+36                        Call of Duty: Modern Warfare 2     X360
+37                        Call of Duty: Modern Warfare 3      PS3
+38                                  Grand Theft Auto III      PS2
+39                               Super Smash Bros. Brawl      Wii
+41                               Call of Duty: Black Ops      PS3
+42                                    Grand Theft Auto V      PS4
+44                                                Halo 3     X360
+45                                        Super Mario 64      N64
+...                                                  ...      ...
+16673                                     Kanokon: Esuii      PS2
+16674      Metal Gear Solid V: The Definitive Experience     XOne
+16676                      Tsukigime Ranko's Longest Day      PS3
+16678                                   G1 Jockey 4 2008      PS3
+16680                                     End of Nations       PC
+16682                               Kyoukai no Shirayuki      PSV
+16683                                            Worms 2       PC
+16685                   Scarlett: Nichijou no Kyoukaisen      PS2
+16686                                          7'scarlet      PSV
+16687              Help Wanted: 50 Wacky Jobs (jp sales)      Wii
+16688  Yattaman Wii: BikkuriDokkiri Machine de Mou Ra...      Wii
+16691                                          Real Rode      PS2
+16692                                     Pony Friends 2       PC
+16693                       Dynasty Warriors: Eiketsuden      PS3
+16694                  Metal Gear Solid V: Ground Zeroes       PC
+16695                                  PGA European Tour      N64
+16696                                     Carmageddon 64      N64
+16698                                             Breach       PC
+16699                                   Bust-A-Move 3000       GC
+16701                              The Longest 5 Minutes      PSV
+16704                            STORM: Frontline Nation       PC
+16705                                   Strawberry Nauts      PSV
+16707                                            15 Days       PC
+16708                      Men in Black II: Alien Escape       GC
+16709                                   Aiyoku no Eustia      PSV
+16711   SCORE International Baja 1000: The Official Game      PS2
+16712                      Samurai Warriors: Sanada Maru      PS3
+16713                                   LMA Manager 2007     X360
+16714                            Haitaka no Psychedelica      PSV
+16716                                Winning Post 8 2016      PSV
+
+[11916 rows x 2 columns]

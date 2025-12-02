@@ -1,0 +1,19 @@
+import pandas as pd
+from matplotlib import pyplot as plt
+
+df = pd.read_csv('/datasets/sbux.csv')
+
+df.plot(x='date',
+        y='volume',
+        title='Historic SBUX volume',
+        xlabel='Date',
+        ylabel='Volume',
+        ylim=[1e6, 7e7],
+        legend=False,
+        rot=50)
+
+plt.show()
+
+# Guia: Incluso en los días más bajos, ¡son muchas acciones negociadas! No olvides incluir plt.show().
+
+# grafico esta en la pagina tripleten!

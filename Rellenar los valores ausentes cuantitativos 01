@@ -1,0 +1,19 @@
+import pandas as pd
+
+analytics_data = pd.read_csv('/datasets/web_analytics_data.csv')
+
+age_avg = analytics_data['age'].mean()
+analytics_data['age'] = analytics_data['age'].fillna(age_avg)
+
+desktop_data = analytics_data[analytics_data['device_type'] == 'desktop']
+mobile_data = analytics_data[analytics_data['device_type'] == 'mobile']
+
+desktop_data.info()
+print()
+mobile_data.info()
+
+#  analytics_data[condición] → Filtra el DataFrame completo basado en la condición
+
+#  analytics_data['device_type'] == 'desktop' → Crea una condición booleana
+
+# Los corchetes externos [] aplican el filtro al DataFrame

@@ -1,0 +1,39 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+df['total_sales'] = df['na_sales'] + df['eu_sales'] + df['jp_sales']
+
+grp = df.groupby('genre')
+
+agg_dict = {
+    'na_sales': 'mean',  # 'mean' suma los elementos de tu codigo
+    'eu_sales': 'mean',
+    'jp_sales': 'mean',
+    'total_sales': 'sum'  # suma el total_sales
+}
+
+# escribe aquí tu diccionario con cuatro tuplas, una por cada variable
+
+genre = grp.agg(agg_dict)  # utiliza aquí la función agg
+
+print(genre)  # muestra aquí los resultados
+
+# resultado :
+na_sales  eu_sales  jp_sales  total_sales
+genre
+Action        0.260834  0.154045  0.047905      1559.58
+Adventure     0.080783  0.048764  0.040138       221.10
+Fighting      0.263086  0.118174  0.103039       411.17
+Misc          0.232726  0.121566  0.061777       728.12
+Platform      0.501689  0.225619  0.147331       776.68
+Puzzle        0.211845  0.086224  0.098810       230.19
+Racing        0.287710  0.189359  0.045404       652.57
+Role-Playing  0.220540  0.125807  0.236973       874.98
+Shooter       0.447649  0.239864  0.029297       948.34
+Simulation    0.208455  0.129886  0.072998       359.51
+Sports        0.291495  0.160473  0.057726      1196.76
+Strategy      0.100366  0.066135  0.072709       163.38
+
+
+# Método agg(): método utilizado para calcular estadísticas agregadas para cada grupo en un DataFrame agrupado.
+# Pásale un diccionario con ítems de 'column':'function'.

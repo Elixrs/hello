@@ -1,0 +1,28 @@
+import pandas as pd
+
+# Cargar los datos (asegúrate de reemplazar 'steam_videogames.csv' por el nombre correcto del archivo)
+df = pd.read_csv('/datasets/steam-200k.csv')
+df.columns = ['user_id', 'game_title', 'behavior_name', 'value']
+
+# Mostrar DataFrame inicial
+print(df.head(5))
+
+# 1. Eliminar filas duplicadas y contar duplicados
+print('Número de filas duplicadas (Inicial): ', df.duplicated().sum())
+df_sin_duplicados = df.drop_duplicates()
+
+df_sin_duplicados.reset_index(drop=True, inplace=True)
+print('Número de filas duplicadas (Final): ',
+      df_sin_duplicados.duplicated().sum())
+
+# ¡Buen comienzo! Ahora tu conjunto de datos está libre de elementos duplicados.
+
+# resultado :
+user_id                  game_title behavior_name  value
+0  151603712  The Elder Scrolls V Skyrim          play  273.0
+1  151603712                   Fallout 4      purchase    1.0
+2  151603712                   Fallout 4          play   87.0
+3  151603712                       Spore      purchase    1.0
+4  151603712                       Spore          play   14.9
+Número de filas duplicadas(Inicial):  707
+Número de filas duplicadas(Final):  0

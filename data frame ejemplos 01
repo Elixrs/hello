@@ -1,0 +1,7 @@
+df = id.DataFrame({
+    "nombre": ["Ana", "Luis", "María", "Sara", "Julián", "Camila"],
+    "edad": [23, 35, 29, 41, 33, 25],
+    "ciudad": ["Bogotá", "Medellín", "Cali", "Cali", "Bogotá", "Medellín"],
+    "ingresos": [2500, 3200, 2800, 4500, 3900, 3100],
+    "plan": ["Free", "Pro", "Free", "Enterprise", "Pro", "Free"]
+})

@@ -1,0 +1,8 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_raw.csv')
+
+# metodo .dropna() para eliminar los valores ausentes (NaN)
+df.dropna(subset=['total play'], inplace=True)
+
+print(df.isna().sum())

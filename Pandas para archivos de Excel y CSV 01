@@ -1,0 +1,10 @@
+import pandas as pd
+
+# Carga del archivo CSV
+# esto muestra como ingresar conseguir los datos
+file_path = '/datasets/diabetes.csv'
+
+df = pd.read_csv(file_path)  # aqui creas el dataframe
+
+# Mostrar la información estructural del DataFrame
+df.info()

@@ -1,0 +1,20 @@
+import pandas as pd
+
+states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas']
+flowers = ['Camellia', 'Forget-me-not',
+           'Saguaro cactus blossom', 'Apple blossom']
+insects = ['Monarch butterfly', 'Four-spotted skimmer dragonfly',
+           'Two-tailed swallowtail', 'European honey bee']
+index = ['state 1', 'state 2', 'state 3', 'state 4']
+
+df = pd.DataFrame({'state': states, 'flower': flowers,
+                  'insect': insects}, index=index)
+
+# loc[] para retornar la columna 'flower' e 'insect' para los estados 1 y 3.
+filtered_df = df.loc[['state 1', 'state 3'], ['flower', 'insect']]
+print(filtered_df)
+
+# resultado :
+flower                  insect
+state 1                Camellia       Monarch butterfly
+state 3  Saguaro cactus blossom  Two-tailed swallowtail

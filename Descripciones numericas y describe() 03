@@ -1,0 +1,13 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/Driver_Details.csv')
+
+df.describe(include='number')  # → Solo columnas categóricas (texto)
+
+df.describe(include='object')  # → Solo columnas numéricas
+
+# include='all' Todas las columnas
+
+# importante poner todo en tu print para monstrar la informacion !
+print(df.describe(include='number'))
+print(df.describe(include='object'))

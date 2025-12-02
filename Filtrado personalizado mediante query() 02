@@ -1,0 +1,22 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+
+cols = ['name', 'publisher', 'developer']
+
+df_filtered = df.query("publisher == developer")[cols]
+# metodo .head() imprimes las primeras 5 filas de tu df
+print(df_filtered.head(5))
+
+# resultado:
+name publisher developer
+0             Wii Sports  Nintendo  Nintendo
+2         Mario Kart Wii  Nintendo  Nintendo
+3      Wii Sports Resort  Nintendo  Nintendo
+6  New Super Mario Bros.  Nintendo  Nintendo
+7               Wii Play  Nintendo  Nintendo
+
+
+# ejercicio: Filtra las filas del DataFrame donde las columnas 'publisher' y 'developer' sean iguales con el método query().
+# Asigna el resultado a la variable df_filtered y, finalmente, imprime las primeras 5 filas de df_filtered.
+# Imprime únicamente las columnas especificadas en la lista cols.

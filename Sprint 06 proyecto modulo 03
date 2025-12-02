@@ -1,0 +1,21 @@
+movies_table = [
+    {'movie_name': 'The Shawshank Redemption', 'country': 'USA',
+        'genre': 'drama', 'year': 1994, 'duration': 142, 'rating': 9.111},
+    {'movie_name': 'The Godfather', 'country': 'USA', 'genre': 'drama, crime',
+        'year': 1972, 'duration': 175, 'rating': 8.730},
+    {'movie_name': 'The Dark Knight', 'country': 'USA',
+        'genre': 'fantasy, action, thriller', 'year': 2008, 'duration': 152, 'rating': 8.499}
+]
+
+# ahora accedemos a la columna por su nombre:
+print(movies_table[2]['movie_name'])
+
+
+# guia : Las claves de diccionario facilitan el acceso a las columnas.
+
+# Conocer las diferentes estructuras de datos también facilita el trabajo de quienes se encargan del análisis.
+#  Además, nos sirve para seleccionar la estructura idónea para cualquier dataset.
+# Cuando el nombre de las columnas aporta más información que su orden, es preferible aplicar una estructura con nombres.
+# Una lista de diccionarios reúne las ventajas de ambas estructuras:
+#  De los diccionarios, los nombres.
+#  De las listas, la capacidad de iterar sobre elementos ordenados.

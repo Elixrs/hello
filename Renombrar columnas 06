@@ -1,0 +1,15 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_raw.csv')
+
+new_col_names = []
+for column in df.columns:  # un bucle for para agregar .strip().lower().replace() y .append() para quitar los espacios en blanco,poner todo en minusculas ,remplazar espacios por_ y .append() para agregar el nombre nuevo.
+    name_stripped = column.strip()
+    name_lowered = name_stripped.lower()
+    name_no_spaces = name_lowered.replace(' ', '_')
+    new_col_names.append(name_no_spaces)
+
+df.columns = new_col_names  # aca pones el nuevo nombre a tu codigo
+
+
+print(df.columns)

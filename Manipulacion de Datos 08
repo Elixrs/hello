@@ -1,0 +1,53 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+df['total_sales'] = df['na_sales'] + df['eu_sales'] + df['jp_sales']
+
+total_sales = df.groupby('platform')['total_sales'].sum()
+num_pubs = df.groupby('platform')['publisher'].nunique()
+
+platforms = pd.concat([total_sales, num_pubs],
+                      axis='columns')  # escribe tu código aquí
+
+# cambia los nombres de las columnas aquí
+platforms.columns = ['total_sales', 'num_publishers']
+print(platforms)  # muestra tu resultado
+
+# resultado :
+# platform
+# 2600            96.07              26
+# 3DO              0.10               3
+# 3DS            245.64              82
+# DC              15.68              15
+# DS             747.13             175
+# GB             247.26              17
+# GBA            310.12              87
+# GC             193.75              52
+# GEN             27.46               7
+# GG               0.04               1
+# N64            214.30              54
+# NES            245.74              12
+# NG               1.44               3
+# PC             237.14             133
+# PCFX             0.03               1
+# PS             689.95             151
+# PS2           1062.33             172
+# PS3            803.97             103
+# PS4            265.83              75
+# PSP            252.63             127
+# PSV             47.63              66
+# SAT             33.52              44
+# SCD              1.81               1
+# SNES           196.82              50
+# TG16             0.16               2
+# WS               1.42               2
+# Wii            828.44             113
+# WiiU            76.24              23
+# X360           885.66             102
+# XB             249.02              73
+# XOne           145.05              46
+
+
+# guia : Usa pd.concat() con dos entradas: una lista que contiene las variables total_sales y num_pubs, y axis='columns'.
+#  Asigna el resultado a platforms, luego asigna una lista de los nuevos nombres de columna a platforms.columns.
+# Imprime platforms después de cambiar el nombre de las columnas.

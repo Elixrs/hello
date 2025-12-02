@@ -1,0 +1,7 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+column_names = df.columns  # df.columns para acceder a la informacion .
+
+print(column_names)

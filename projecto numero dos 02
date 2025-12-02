@@ -1,0 +1,22 @@
+def clean_user(user):
+    # Limpia y divide el nombre
+    # metodo .strip() y .split('_') para limpiar y diviir el nombre
+    name = user[1].strip().split('_')
+
+    # Edad como entero
+    age = int(user[2])  # int() para convertir el numero a entero
+
+    # Categorías a minúsculas
+
+    categories = []
+    for cat in user[3]:
+        # metodo .append para agregar y .lower() para poner todo en minuscula.
+        categories.append(cat.lower())
+
+    return [user[0], name, age, categories, user[4]]
+
+
+# Prueba
+test_user = ['32415', ' mike_reed ', 32.0, [
+    'ELECTRONICS', 'SPORT', 'BOOKS'], [894, 213, 173]]
+print(clean_user(test_user))

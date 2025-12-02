@@ -1,0 +1,40 @@
+# Inventario inicial
+inventory = [
+    {"titulo": "Cien años de soledad",
+        "autor": "Gabriel García Márquez", "disponible": True},
+    {"titulo": "La casa de los espíritus",
+        "autor": "Isabel Allende", "disponible": True},
+    {"titulo": "Rayuela", "autor": "Julio Cortázar", "disponible": False},
+]
+
+# 1 Definir la función para agregar un libro
+
+
+def add_book(titulo, autor, disponible):
+    add_book = {  # add_book es el nuevo diccionario para agregar tu nuevo libro
+        "titulo": titulo,
+        "autor": autor,
+        "disponible": disponible
+    }
+
+    # se poner inventory.append(add_book) para que se agregue el nuevo diccionario y el libro.
+    inventory.append(add_book)
+    # 2 Crear un diccionario que contenga los datos del libro
+    # 3 Agregar el nuevo libro al inventario con append()
+
+# 4 Definir la función para verificar disponibilidad
+
+
+def check_availability(titulo):
+    for book in inventory:
+        # 5 Revisar si el libro está en el inventario y disponible
+        if book["titulo"] == titulo and book["disponible"]:
+            print(f"'{titulo}' está disponible.")
+            return
+    # 6 Si no se encuentra, imprimir el mensaje de no disponibilidad
+    print(f"'{titulo}' no está en el inventario.")
+
+
+# Uso de las funciones
+add_book("Pedro Páramo", "Juan Rulfo", disponible=True)
+check_availability("Pedro Páramo")

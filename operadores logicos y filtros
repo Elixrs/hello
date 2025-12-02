@@ -1,0 +1,24 @@
+clients = [
+    [32456, "Jack Wilson", 32, 150000, "Healthcare"],
+    [34591, "Nina Brown", 45, 250000, "Telecom"],
+    [37512, "Alex Smith", 39, 210000, "IT"],
+    [39591, "Brian Perez", 29, 340000, "Transportation"],
+    [45123, "Sarah Lee", 28, 120000, "Marketing"],
+    [47635, "David Kim", 36, 180000, "Finance"],
+    [49571, "Samantha Chen", 42, 220000, "Retail"],
+    [50391, "Juan Rodriguez", 31, 160000, "Architecture"],
+    [34556, "Lucas Hernandez", 37, 75000, "Education"]
+]
+
+elite_young = []
+executive_young = []
+
+for client in clients:
+    if client[2] < 35 and client[3] > 200000 and client[3] <= 300000:
+        elite_young.append(client)
+
+    if client[2] < 35 and client[3] >= 300000:
+        executive_young.append(client)
+
+# no modifiques nada por debajo de esta línea
+print(executive_young)

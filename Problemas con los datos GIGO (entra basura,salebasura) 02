@@ -1,0 +1,7 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_raw.csv')
+
+# Imprime los valores de la columna total play
+# importante esta parte por que asi puedes ver tu dataframe.. si pones , o espacios te puede dar error.. siempre poner bien el nombre
+print(df['total play'])

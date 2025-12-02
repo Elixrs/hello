@@ -1,0 +1,18 @@
+from math import factorial
+
+tasks = 10  # introduce aquí el número de tareas
+# calcula aquí el número total de secuencias de tareas posibles
+permutations = factorial(tasks)
+# calcula aquí la probabilidad de seleccionar la única combinación ganadora
+probability = 1 / permutations
+
+print(probability)
+
+# resultado : 2.755731922398589e-07
+
+# ¡Increíble! ¡La probabilidad de ganar el superpremio es inferior al 0.00003%! ¡Recuérdalo la próxima vez que quieras jugar a la lotería 😜!
+
+
+# guia : 1. El número de tareas es 10. 2. Para obtener el número de permutaciones,
+# utiliza el factorial. 3. De todas las secuencias de tareas posibles, solo una permite a los jugadores ganar el superpremio.
+# Para calcular la probabilidad de ganar, hay que dividir 1 entre el número de permutaciones.

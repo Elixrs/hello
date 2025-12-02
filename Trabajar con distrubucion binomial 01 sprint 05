@@ -1,0 +1,26 @@
+from math import factorial
+
+p = 60 / 100  # la probabilidad de que un cliente realice una compra
+q = 1-p  # la probabilidad de que un cliente NO realice una compra
+n = 80  # el número total de visitantes
+k = 50  # el número de visitantes que esperamos que realicen una compra
+
+combinations = factorial(n) / (factorial(k) * factorial(n-k))
+probability = combinations * (p**k) * (q**(n-k))
+# escribe aquí el código para realizar los cálculos
+
+print(probability)
+
+# resultado : 0.0826713508623046
+# ¡Genial! Has calculado que la probabilidad de que exactamente 50 personas compren computadoras portátiles es ligeramente superior al 8%.
+# Es un buen resultado para un producto caro.
+
+#  guia : En primer lugar, tienes que establecer los valores de las variables *p*, *k*, *n* y *q*. *p*
+#  es la probabilidad de que un usuario compre una computadora portátil.
+#  Según la condición proporcionada, el 60% de los compradores están dispuestos a realizar una compra.
+#  Por lo tanto, *p* = 60 / 100 = 0.6. Podemos calcular *q* utilizando la fórmula *1 - p*.
+#  La variable *n* representa el número de clientes que acuden a la tienda durante el día.
+#  En el ejercicio se menciona que esta cantidad es igual a 80.
+# *k* es el número de clientes que se espera que se compren una computadora portátil y que es igual a 50 según la condición dada.
+#  Después de establecer los valores de todos los datos de entrada, podemos calcular el valor de la variable `probability`
+#  mediante la fórmula: n! / (k! * (n-k)!) * p**k * q**(n-k).

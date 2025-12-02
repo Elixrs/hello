@@ -1,0 +1,18 @@
+import pandas as pd
+
+data = {
+    'sucursal': ['Centro', 'Norte', 'Sur', 'Centro', 'Norte'],
+    'producto': ['Camiseta roja', 'Zapatillas azules', 'Camisa blanca', 'Jeans negros', 'Camiseta roja'],
+    'cliente': ['Ana Garcia', 'Luis Rodriguez', 'Pedro Hernandez', 'Maria Lopez', 'Juan Perez'],
+    'cantidad': [2, 1, 3, 1, 4],
+    'precio_unitario': [15.99, 49.99, 29.99, 39.99, 15.99],
+    'venta_total': [31.98, 49.99, 89.97, 39.99, 63.96]
+}
+
+df = pd.DataFrame(data)
+
+# usando el metodo & (AND) para combinar el resultado.. la sucursal y precio unitario >(mayor) a 25.
+ventas_filtradas_df = df.loc[(df['sucursal'] == 'Centro') & (
+    df['precio_unitario'] > 25)]
+
+print(ventas_filtradas_df)

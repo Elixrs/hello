@@ -1,0 +1,19 @@
+import pandas as pd
+df_logs = pd.read_csv('/datasets/visit_log.csv')
+
+df_logs['email'] = df_logs['email'].fillna(value='')
+
+print(df_logs.head())
+
+
+# ¿No es un número? ¡Ya no! Ahora, cuando imprimimos el DataFrame, no vemos nada para los valores de 'email' ausentes
+#  porque con el string vacío no hay nada que imprimir.
+
+
+# resultado :
+user_id   source       email  purchase
+0  7141786820    other                     0
+1  5644686960    email  c129aa540a         0
+2  1914055396  context                     0
+3  4099355752    other                     0
+4  6032477554  context                     1

@@ -1,0 +1,27 @@
+import pandas as pd
+
+# crear un dataframe con 2 columnas
+d = {'col1': ['1.0', '2.0'], 'col2': ['3', '4']}
+df = pd.DataFrame(data=d)
+
+# convertir la segunda columna 'col2' a int
+df['col1'] = df['col1'].astype('int')
+
+# verificar el data type de las columnas utilizando el metodo '.dtypes'
+print(df.dtypes)
+
+
+# el resultado da error :
+
+# Traceback (most recent call last):
+# File "main.py", line 8, in <module>
+#    df['col1'] = df['col1'].astype('int')
+# ValueError: invalid literal for int() with base 10: '1.0'
+
+
+# ejercicio: Por ejemplo,
+# - convertir el string '1.0' -> flotante si se puede.
+# - convertir el string '1' -> entero si se puede.
+# - convertir el string '1.0' (en formato de flotante) -> entero no se puede.
+
+# Ejecuta el código y observa el error cuando intentamos convertir strings de la col1 que representan valores flotantes en enteros:

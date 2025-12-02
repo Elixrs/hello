@@ -1,0 +1,45 @@
+import pandas as pd
+df = pd.read_csv('/datasets/vg_sales.csv')
+df.dropna(inplace=True)
+
+
+def avg_score_group(row):
+    critic_score = row['critic_score']
+    user_score = row['user_score']
+    avg_score = (critic_score + user_score * 10) / 2
+    if avg_score < 60:
+        return 'low'
+    if avg_score < 80:
+        return 'medium'
+    if avg_score >= 80:
+        return 'high'
+
+
+# parte de prueba a continuación, por favor no la cambies
+col_names = ['critic_score', 'user_score']
+test_low = pd.Series([10, 1.0], index=col_names)
+test_med = pd.Series([65, 6.5], index=col_names)
+test_high = pd.Series([99, 9.9], index=col_names)
+
+rows = [test_low, test_med, test_high]
+
+for row in rows:
+    print(avg_score_group(row))
+
+# resultado :
+# low
+# medium
+# high
+
+
+# ejercicio : Escribe una función que se llame avg_score_group() (grupo puntuación promedio) que tenga un parámetro llamado row.
+#  El parámetro row debe ser un objeto tipo Series de pandas. La función debe calcular la calificación promedio de cada juego,
+# luego devolver una cadena que coloque cada uno en una de estas categorías:
+
+#    valor 'low' para promedios menores de 60.
+#    valor 'medium' para promedios de 60 a 79.
+#    valor 'high' (alto) para puntuaciones mayores a 80.
+
+# Para calcular la puntuación promedio, avg_score_group() debe tomar los valores de row con los nombres de columna 'critic_score' y 'user_score'. La fórmula para calcularlo es avg_score = (critic_score + user_score * 10) / 2.
+
+# Te dejamos las pruebas hechas, se debe imprimir low, medium y high, en ese orden.

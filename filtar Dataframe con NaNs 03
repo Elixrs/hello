@@ -1,0 +1,15 @@
+import pandas as pd
+
+df_logs = pd.read_csv('/datasets/visit_log.csv')
+
+df_emails = df_logs[(df_logs['email'].isna()) & (df_logs['source'].isna())]
+
+print(df_emails)
+
+# ¡El DataFrame filtrado está vacío! Eso significa que no hay filas en las que 'source' y 'email' tengan valores ausentes.
+# En la próxima lección usarás esta información para comenzar a rellenar los valores ausentes.
+
+# Resultado :
+Empty DataFrame
+Columns: [user_id, source, email, purchase]
+Index: []

@@ -1,0 +1,39 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+df.dropna(inplace=True)
+
+
+def avg_score_group(row):
+    critic_score = row['critic_score']
+    user_score = row['user_score']
+
+    avg_score = (critic_score + user_score * 10) / 2
+
+    if avg_score < 60:
+        return 'low'
+    if avg_score < 80:
+        return 'medium'
+    if avg_score >= 80:
+        return 'high'
+
+
+# crea las filas de input de prueba aquí
+row_1 = pd.Series([66, 3.6], index=['critic_score', 'user_score'])
+row_2 = pd.Series([72, 8.1], index=['critic_score', 'user_score'])
+row_3 = pd.Series([99, 9.4], index=['critic_score', 'user_score'])
+
+# imprime los resultados de llamar a la función con los input de prueba en orden
+print(avg_score_group(row_1))
+print(avg_score_group(row_2))
+print(avg_score_group(row_3))
+
+# resultado :
+# low
+# medium
+# high
+
+
+# pistas : Usa pd.Series() para crear las variables de fila de prueba,
+# pasando una lista de los dos valores en el orden correcto e index=['critic_score', 'user_score'].
+# Después, imprime el resultado de llamar a avg_score_group() por cada input en orden: por ejemplo, avg_score_group(row_1), etc

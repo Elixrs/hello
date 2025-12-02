@@ -1,0 +1,21 @@
+import pandas as pd
+
+analytics_data = pd.read_csv('/datasets/web_analytics_data.csv')
+
+age_avg = analytics_data['age'].mean()
+analytics_data['age'] = analytics_data['age'].fillna(age_avg)
+
+desktop_data = analytics_data[analytics_data['device_type'] == 'desktop']
+mobile_data = analytics_data[analytics_data['device_type'] == 'mobile']
+
+desktop_avg = desktop_data['time'].mean()
+mobile_avg = mobile_data['time'].mean()
+
+print(f"Tiempo de escritorio promedio: {desktop_avg:.2f} segundos")
+print(f"Tiempo móvil promedio: {mobile_avg:.2f} segundos")
+
+# desktop_data['time'] → Selecciona solo la columna 'time' del DataFrame filtrado.
+# .mean() → Calcula la media de esa columna específica
+
+
+# Según las instrucciones del ejercicio, necesitas calcular la media específicamente de la columna 'time' (linea 11 y 12)

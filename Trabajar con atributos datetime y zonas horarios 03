@@ -1,0 +1,25 @@
+import pandas as pd
+
+position = pd.read_csv('/datasets/position.csv')
+position['timestamp'] = pd.to_datetime(
+    position['timestamp'], format='%Y-%m-%dT%H:%M:%S')
+
+dt_toronto = position['timestamp'].dt.tz_localize(
+    'America/Toronto')  # codigo hecho
+
+print(dt_toronto.head(5))
+
+# resultado :
+# 0   2019-02-04 13:22:34-05:00
+# 1   2019-02-06 15:30:54-05:00
+# 2   2019-02-08 14:53:45-05:00
+# 3   2019-02-10 16:50:22-05:00
+# 4   2019-02-12 14:16:28-05:00
+# Name: timestamp, dtype: datetime64[ns, America/Toronto]
+
+
+# ¡Excelente! Ahora tus datos tienen un contexto horario claro y pueden ser comparados con registros de otras regiones.
+
+
+# ejercicio : Localiza correctamente las marcas de tiempo asignándoles la zona horaria 'America/Toronto',
+#  y guarda el resultado en una nueva variable llamada dt_toronto. Muestra las primeras cinco filas.

@@ -1,0 +1,23 @@
+from scipy import stats as st
+
+mu = 420  # escribe tu código aquí: ¿cuál es la media?
+sigma = 65  # escribe tu código aquí: ¿cuál es la desviación estándar?
+prob = 0.9  # escribe tu código aquí: ¿cuál es la probabilidad requerida de vender todos los artículos?
+
+# escribe tu código aquí: ¿cuántos artículos se deben pedir?
+n_shipment = st.norm.ppf(prob, mu, sigma)
+
+print('Cantidad de artículos a pedir:', int(n_shipment))
+
+# resultado : Cantidad de artículos a pedir: 503
+
+# Usa `st.norm.ppf(prob)` para calcular cuántos artículos pedir.
+#  Como queremos cubrir la demanda el 90% de las veces, utiliza `prob = 0.9` directamente
+
+# Ejercicio 2
+
+# Otra tienda online, Fancy Pants, vende productos de regalo a un público muy limitado de clientes corporativos.
+# Las ventas semanales en la tienda de conjuntos de ajedrez de lujo fabricados con colmillo de mamut tienen una distribución normal
+# con una media de 420 y una desviación estándar de 65.
+# El equipo de inventario está decidiendo cuántos conjuntos pedir.
+#  Quieren que la posibilidad de venderlos todos la próxima semana sea del 90%. ¿Cuántos deben pedir?

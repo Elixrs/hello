@@ -1,0 +1,16 @@
+from math import factorial
+
+p = 0.2
+q = 0.8
+n = 160
+k = 50
+
+probability = factorial(n) / (factorial(k) *
+                              factorial(n-k)) * (p ** k) * (q ** (n-k))
+
+print(probability)
+
+# resultado : 0.00024035993375900262
+# Como puedes ver, la probabilidad es más de 300 veces menor que en el ejemplo anterior.
+# guia : Para resolver este problema, puedes utilizar el código del ejemplo anterior.
+# En el código, modifica los valores de las variables *p*, *q* y *n*, pero deja todo lo demás sin cambios.

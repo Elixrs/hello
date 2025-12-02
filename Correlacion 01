@@ -1,0 +1,13 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/height_weight.csv')
+
+ah_corr = df['height'].corr(df['age'])
+
+print(ah_corr)
+
+
+# resultado : 0.010042046516844344
+
+# guia : !Casi 0 de correlación! Eso concuerda con el gráfico de dispersión, y también tiene sentido intuitivo.
+#  La edad más joven en este conjunto de datos es de 25 años. La mayoría de las personas han terminado de crecer para entonces.

@@ -1,0 +1,17 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+df['user_score'] = pd.to_numeric(df['user_score'], errors='coerce')
+
+q_string = "na_sales >= 1 or eu_sales >= 1 or jp_sales >= 1"  # codigo resuelto aqui
+print(df.query(q_string).head())
+
+# resultado :
+#                       name platform  ...  critic_score user_score
+0                Wii Sports      Wii  ...          76.0        8.0
+1         Super Mario Bros.      NES  ...           NaN        NaN
+2            Mario Kart Wii      Wii  ...          82.0        8.3
+3         Wii Sports Resort      Wii  ...          80.0        8.0
+4  Pokemon Red/Pokemon Blue       GB  ...           NaN        NaN
+
+[5 rows x 11 columns]

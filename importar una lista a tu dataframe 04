@@ -1,0 +1,33 @@
+import pandas as pd
+
+sales_data = [
+    ['Laptop', 'North America', 120, 120000],
+    ['Smartphone', 'Europe', 340, 170000],
+    ['Tablet', 'Asia', 210, 63000],
+    ['Headphones', 'South America', 150, 45000],
+    ['Smartwatch', 'Africa', 95, 28500],
+]
+
+# columns es esta lista que tiene el nombre de productos , region etc
+columns = ['product_name', 'region', 'units_sold', 'revenue']
+
+df = pd.DataFrame(sales_data, columns=columns)  # df para crear tu dataframe.
+
+print(df)  # print df(dataframe) para que se imprima tu codigo.
+
+# -------------------------------------------------------------------
+
+sales_data = [
+    ['Laptop', 'North America', 120, 120000],
+    ['Smartphone', 'Europe', 340, 170000],
+    ['Tablet', 'Asia', 210, 63000],
+    ['Headphones', 'South America', 150, 45000],
+    ['Smartwatch', 'Africa', 95, 28500],
+]
+
+columns = ['product_name', 'region', 'units_sold', 'revenue']
+
+# poniendo el metodo info() puedes acceder a la informacion de tu dataframe.
+df = pd.DataFrame(sales_data)
+
+df.info()  # no necesitas el print para imprimir tu dataframe.

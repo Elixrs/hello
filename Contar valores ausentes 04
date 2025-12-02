@@ -1,0 +1,26 @@
+import pandas as pd
+
+df_logs = pd.read_csv('/datasets/visit_log.csv')
+
+# metodo para ver los valores en la columna 'email'
+email_values = df_logs['email'].value_counts(dropna=True)
+
+print(email_values)
+
+# Ahora vemos cómo quedan los valores de la columna 'email'.
+# ¡Hay muchos! Parece que no es el mejor enfoque para examinar los valores ausentes en esta columna. Y sin embargo, ¡no está de más saberlo!
+
+
+# Resultado :
+410a2a3c23    9
+4526cc437a    9
+17c4fb26f9    8
+1b5e58b36f    7
+5a4c033120    7
+..
+00d97a7162    1
+9e8eae685d    1
+f26d93f75e    1
+6736a67a8d    1
+67b51403f2    1
+Name: email, Length: 6062, dtype: int64

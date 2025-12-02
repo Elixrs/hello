@@ -1,0 +1,26 @@
+financial_info = {
+    'American Express': 93,
+    'Boeing': 178,
+    'Coca-Cola': 45,
+    'Walt Disney': 119,
+    'Nike': 97,
+    'JPMorgan': 96,
+    'Walmart': 130
+}
+
+total_value = 0  # el valor que actualizarás en cada iteración del bucle
+
+for company, value in financial_info.items():  # metodo items()
+    total_value += value
+    # escribe tu bucle for aquí. En cada iteración del ciclo, extrae el precio
+
+# y actualiza la variable total_value
+
+print(total_value)
+
+
+# resultado : 758
+
+# guia : Utiliza el bucle `for` para iterar sobre las claves y los valores de esta manera:
+#  ```python for key, value in financial_info.items():
+#  ``` Para actualizar `total_value`, usa el operador de asignación aumentada (`+=`).

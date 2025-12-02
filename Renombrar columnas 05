@@ -1,0 +1,7 @@
+# Nombre de la columna con espacios internos
+column_name = 'total play'
+
+# metodo .replace() para quitar los espacios y reemplazarlos por guines bajos'_'
+name_no_spaces = column_name.replace(' ', '_')
+
+print(name_no_spaces)  # siempre imprime tu variable.

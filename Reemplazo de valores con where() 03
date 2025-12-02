@@ -1,0 +1,23 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/menu_items.csv')
+
+print(df['platillo'].value_counts(ascending=True))
+
+# resultado:
+Ensalada    11
+Postre      12
+Pescado     14
+Carnes      21
+Sopa        47
+Pasta       50
+Bebida      80
+Name: platillo, dtype: int64
+
+# Guia:Llama a `value_counts()` en la columna `'platillo'` de `df` y asegúrate de utilizar el parámetro `ascending=`. Imprime el resultado.
+
+
+# ejercicio: La gestión del menú de un restaurante es clave para su éxito.
+#  El objetivo es categorizar los platillos menos representados en la categoría de "Otros",
+# sustituyendo sus nombres por 'Otros'. Vamos a hacerlo en el próximo ejercicio.
+# Para empezar, cuenta cuántas veces aparece cada valor de la columna 'platillo' llamando al método value_counts() e imprimiendo los resultados en orden ascendente.

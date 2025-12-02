@@ -1,0 +1,41 @@
+import pandas as pd
+
+cool_rock = pd.DataFrame(
+    {
+        'Artist': [
+            'Queen',
+            'Queen',
+            'Queen',
+            'Pink Floyd',
+            'Nirvana',
+            'AC/DC',
+            'AC/DC',
+            'Scorpions',
+            'Scorpions',
+            'Scorpions',
+        ],
+        'Song': [
+            'The Show Must Go On',
+            'Another One Bites The Dust',
+            'We Will Rock You',
+            'Wish You Were Here',
+            'Smells Like Teen Spirit',
+            'Highway To Hell',
+            'Back in Black',
+            'Wind Of Change',
+            'Still Loving You',
+            'Send Me An Angel',
+        ],
+    }
+)
+
+desired_artist = 'Queen'
+
+# escribe aquí el código para encontrar el número de resultados deseados
+desired_outcomes = len(cool_rock[cool_rock['Artist'] == desired_artist])
+# escribe aquí el código para encontrar el número de resultados totales
+total_outcomes = len(cool_rock)
+# escribe aquí el código para calcular la probabilidad
+probability = desired_outcomes / total_outcomes
+
+print(probability)

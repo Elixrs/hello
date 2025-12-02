@@ -1,0 +1,15 @@
+import pandas as pd
+
+# Carga del archivo CSV
+file_path = '/datasets/diabetes.csv'
+df = pd.read_csv(file_path)
+
+# Mostrar las primeras 3 filas
+print("Primeras 3 filas:")
+# print df.head() para revisar las primeras filas de tu lista o poniendo un numero puedes aceder a las 3 perimeras
+print(df.head(3))
+
+# Mostrar las últimas 3 filas
+print("\nÚltimas 3 filas:")
+# print df.tail() para aceder a las ultimas filas de tu lista o poner un numero 3 para aceder a las 3 ultimas.
+print(df.tail(3))

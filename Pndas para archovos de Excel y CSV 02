@@ -1,0 +1,9 @@
+import pandas as pd
+
+# Carga del archivo CSV
+file_path = '/datasets/diabetes.xlsx'
+
+df = pd.read_excel(file_path)  # para leer el formato en Excel.
+
+# Mostrar la información estructural del DataFrame
+df.info()  # df.info() para mostar la informacion.

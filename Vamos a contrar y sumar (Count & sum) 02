@@ -1,0 +1,8 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+# aqui se usa el metodo len() para contrar y el metodo.count() para ver cuantas veces sale Aura en la columna Artist.
+aura_count = len(df[df['Artist'] == 'Aura'].count())
+
+print(aura_count)

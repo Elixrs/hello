@@ -1,0 +1,19 @@
+import pandas as pd
+
+# Cargar el archivo CSV
+digimon_data = pd.read_csv('/datasets/DigiDB_digimonlist.csv')
+
+# Agrupar los datos
+grouped_stage_count = digimon_data.groupby(
+    'Stage')['Digimon'].count()  # Contar Digimons por Stage .count()
+
+grouped_stage_sum = digimon_data.groupby(
+    'Stage')['Lv 50 HP'].sum()  # Sumar salud por Stage .sum()
+
+# Promediar velocidad por Stage .groupby()
+grouped_stage_mean = digimon_data.groupby('Stage')['Lv50 Spd'].mean()
+
+# Mostrar los resultados
+print('Distribución de los Digimons', '\n', grouped_stage_count, '\n')
+print('Total de Salud', '\n', grouped_stage_sum, '\n',)
+print('Promedio Nivel de Velocidad', '\n', grouped_stage_mean)

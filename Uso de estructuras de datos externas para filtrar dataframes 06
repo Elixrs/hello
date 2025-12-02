@@ -1,0 +1,57 @@
+import pandas as pd
+
+# Crear DataFrame de ventas
+datos_ventas = {
+    'producto': ['Laptop', 'Mouse', 'Teclado', 'Monitor', 'Impresora', 'Tablet'],
+    'ventas': [150, 500, 300, 120, 80, 200]
+}
+ventas = pd.DataFrame(datos_ventas)
+
+# Crear DataFrame de stock
+datos_stock = {
+    'producto': ['Laptop', 'Mouse', 'Teclado', 'Monitor', 'Impresora', 'Tablet', 'Cargador'],
+    'stock': [50, 200, 150, 75, 30, 100, 60]
+}
+stock = pd.DataFrame(datos_stock)
+
+print("Datos de ventas:\n", ventas)
+print("\nDatos de stock:\n", stock)
+
+# Series externo con los productos más vendidos
+productos_más_vendidos = pd.Series(['Mouse', 'Tablet', 'Teclado'])
+
+# Filtrar el DataFrame de ventas usando el Series externo
+# ventas filtradas y el metodo .isin()
+ventas_filtradas = ventas[ventas['producto'].isin(productos_más_vendidos)]
+print("\nVentas filtradas (productos más vendidos):\n", ventas_filtradas)
+
+# resultado :
+# Datos de ventas:
+producto  ventas
+0     Laptop     150
+1      Mouse     500
+2    Teclado     300
+3    Monitor     120
+4  Impresora      80
+5     Tablet     200
+
+Datos de stock:
+    producto  stock
+0     Laptop     50
+1      Mouse    200
+2    Teclado    150
+3    Monitor     75
+4  Impresora     30
+5     Tablet    100
+6   Cargador     60
+
+Ventas filtradas(productos más vendidos):
+    producto  ventas
+1    Mouse     500
+2  Teclado     300
+5   Tablet     200
+
+
+# ejercicio: Tienes dos DataFrames: uno con información de ventas por producto y otro con datos de stock de productos.
+# Tu objetivo es filtrar el DataFrame de ventas usando un Series externo para seleccionar las ventas de productos más vendidos y
+# filtrar los productos del DataFrame de stock según los productos presentes en el DataFrame de ventas.

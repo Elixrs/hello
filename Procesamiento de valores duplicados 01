@@ -1,0 +1,17 @@
+import pandas as pd
+
+# Carga de datos
+df = pd.read_csv('/datasets/music_log_raw.csv')
+
+# Número de duplicados al inicio
+print('Número de filas duplicadas (Inicio): ', df.duplicated().sum())
+
+# Eliminar duplicados y reseteo de índices a nivel de filas
+# .drop_duplicates() Elimina las filas completamente duplicadas
+df = df.drop_duplicates().reset_index(drop=True)
+# reset_index(drop=True): Reinicia los índices para que sean consecutivos (0, 1, 2, 3...) y elimina la columna de índices antiguos
+
+print('Número de filas duplicadas (Final): ', df.duplicated().sum())
+
+#    .duplicated() → Devuelve True/False para cada fila
+.sum() → Cuenta cuántos True hay(porque True=1)

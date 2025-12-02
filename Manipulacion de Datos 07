@@ -1,0 +1,49 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/vg_sales.csv')
+df['total_sales'] = df['na_sales'] + df['eu_sales'] + df['jp_sales']
+
+total_sales = df.groupby('platform')['total_sales'].sum()
+
+# escribe tu código aquí
+num_pubs = df.groupby('platform')['publisher'].nunique()  # metodo unique()
+
+print(num_pubs)  # imprime aquí
+
+# resultdo :
+# platform
+# 2600     26
+# 3DO       3
+# 3DS      82
+# DC       15
+# DS      175
+# GB       17
+# GBA      87
+# GC       52
+# GEN       7
+# GG        1
+# N64      54
+# NES      12
+# NG        3
+# PC      133
+# PCFX      1
+# PS      151
+# PS2     172
+# PS3     103
+# PS4      75
+# PSP     127
+# PSV      66
+# SAT      44
+# SCD       1
+# SNES     50
+# TG16      2
+# WS        2
+# Wii     113
+# WiiU     23
+# X360    102
+# XB       73
+# XOne     46
+# Name: publisher, dtype: int64
+
+# guia : Llama a groupby() en df para agrupar por 'platform', luego llama a nunique() en la columna 'publisher' del DataFrame agrupado.
+# Asigna el resultado a una variable llamada num_pubs y luego muéstralo.

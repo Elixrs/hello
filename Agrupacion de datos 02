@@ -1,0 +1,8 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_processed.csv')
+
+# metodo .sum() para calcular el tiempo que los usuarios pasaron escuchando cada genero
+genre_groups = df.groupby('genre')['total_play'].sum()
+
+print(genre_groups)

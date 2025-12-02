@@ -1,0 +1,7 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_raw.csv')
+
+# Muestra las primeras 10 filas del DataFrame
+df.head(10)  # metodo .head en tu dataframe para ver las primeras 10 filas.
+print(df.head(10))  # pinrt todo para  que veas bien tu codigo.

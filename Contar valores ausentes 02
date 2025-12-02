@@ -1,0 +1,8 @@
+import pandas as pd
+
+df_logs = pd.read_csv('/datasets/visit_log.csv')
+print(df_logs.isna().sum())
+
+
+# Aunque info() señala que tenemos valores ausentes, si nuestro objetivo es contar valores ausentes,
+# entonces hay una mejor opción: el método isna().

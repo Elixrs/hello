@@ -1,0 +1,24 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_raw.csv')
+
+# Reemplaze los valores ‘hard-n-heavy'` por `"hard'n'heavy"`.
+
+# df['genre'] el genero que quieres cambiar el nombre de hard-n-heavy por , hard'n'heavy
+df['genre'] = df['genre'].replace('hard-n-heavy', "hard'n'heavy")
+
+# Reemplaze los valores 'ranchera'` por `'rancheras'`
+
+# df['genre'] el genero que quieres cambiar el nombre de ranchera por rancheras
+df['genre'] = df['genre'].replace('ranchera', 'rancheras')
+
+# Validación
+generos_unicos = df['genre'].dropna().unique()
+filtros = []
+
+for g in generos_unicos:
+    if g[:3] == 'har' or g[:3] == 'ran':
+        filtros.append(g)
+
+# Imprimir el resultado
+print(filtros)

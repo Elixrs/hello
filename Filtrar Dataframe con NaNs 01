@@ -1,0 +1,12 @@
+import pandas as pd
+
+df_logs = pd.read_csv('/datasets/visit_log.csv')
+
+print(df_logs[df_logs['source'].isna()])
+
+
+#    Extraemos la columna 'source' utilizando df_logs['source'].
+A continuación, le aplicamos el método isna()
+para obtener una serie de booleanos que indican la ausencia de valores: df_logs['source'].isna().
+Utilizamos esta serie de booleanos para filtrar el DataFrame original, extrayendo solamente las filas en las que 'source' tiene valores ausentes.
+Por último, imprimimos la tabla resultante.

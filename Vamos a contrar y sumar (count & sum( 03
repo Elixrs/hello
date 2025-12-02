@@ -1,0 +1,8 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_chpt_11.csv')
+
+# aqui el codigo busca el artista zodiac y cuenta el total de horas escuchadas de este artista con el metido .sum()
+zodiac_total = df[df['Artist'] == 'Zodiac']['total play'].sum()
+
+print(zodiac_total)

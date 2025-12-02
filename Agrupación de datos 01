@@ -1,0 +1,8 @@
+import pandas as pd
+
+df = pd.read_csv('/datasets/music_log_processed.csv')
+
+# metodo .groupby() para agrupar los elementos  y .count() para contar todo.
+genre_groups = df.groupby('genre')['genre'].count()
+
+print(genre_groups)

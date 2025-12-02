@@ -1,0 +1,19 @@
+import pandas as pd
+from matplotlib import pyplot as plt
+
+df = pd.read_csv('/datasets/west_coast_pop.csv')
+
+df.plot(x='year',
+        y=['or_pop', 'wa_pop'],
+        kind='bar',
+        title='Pacific Northwest population growth',
+        xlabel="Year",
+        ylabel="Population (millions)"
+        )
+plt.legend(["OR", "WA"])
+plt.show()
+
+# guia: Llama al método plot() en df con los siguientes argumentos: x=, y=, kind=, title=, xlabel= y ylabel=.
+# El argumento y= debe ser una lista de nombres de columna que quieras tener en tu gráfico de barras.
+# Luego usa plt.legend() para especificar las etiquetas de leyenda. No olvides utilizar plt.show() al final de tu código.
+#  La prueba para tu título y etiquetas distingue entre mayúsculas y minúsculas.

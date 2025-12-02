@@ -1,0 +1,8 @@
+# Nombre de la columna con mayúsculas
+column_name = 'User_ID'
+
+# con el metido .lower() ponemos en miniscula nuestro string column_name
+# siempre agrega una variable para ajutar tu codigo.
+name_lowered = column_name.lower()
+
+print(name_lowered)
